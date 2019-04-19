@@ -1,14 +1,13 @@
 /*
- * UART.h
+ * USART.h
  *
- *  Created on: Mar 1, 2019
- *      Author: Mostafa Samir Nawar
+ *  Created on: ??þ/??þ/????
+ *      Author: manar
  */
 
-#ifndef HEADERS_UART_H_
-#define HEADERS_UART_H_
-#include "STD_Type.h"
-#include "st32myReg.h"
+#ifndef USART_H_
+#define USART_H_
+#include "STD_TYPES.h"
 
 void MCAL_UART1_Init(void);
 /*Synch*/
@@ -16,4 +15,4 @@ void MCAL_UART1_SendByte(u8 Value );
 /*Synch*/
 u8 MCAL_UART1_ReadByte(void);
 
-#endif /* HEADERS_UART_H_ */
+#endif /* USART_H_ */

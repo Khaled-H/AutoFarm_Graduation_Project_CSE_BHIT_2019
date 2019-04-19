@@ -1,13 +1,15 @@
 /*
  * WIFI.h
  *
- *  Created on: Mar 1, 2019
- *      Author: Mostafa Samir Nawar
+ *  Created on: ??þ/??þ/????
+ *      Author: manar
  */
 
-#ifndef HEADERS_WIFI_H_
-#define HEADERS_WIFI_H_
-#include "STD_Types.h"
+#ifndef WIFI_H_
+#define WIFI_H_
+
+#include "STD_TYPES.h"
+#include "USART.h"
 
 /*Dont Erase these 2 below Comments */
 //#define WIFI_RD_CHANNEL		(UART_RD_CHANNEL_1)
@@ -34,11 +36,7 @@ void HAL_WIFI_ReadByte(void);
 
 
 
-/**************************************************************************************
- * 								Optional/Advanced Implementations 					  *
- **************************************************************************************
- */
-void WIFI_Send_Block(u8 * Block_Start_Ptr, u32 Block_Size );
-void WIFI_Read_Block(u8 * Block_Start_Ptr, u32 Block_Size );
 
-#endif /* HEADERS_WIFI_H_ */
+
+
+#endif /* WIFI_H_ */

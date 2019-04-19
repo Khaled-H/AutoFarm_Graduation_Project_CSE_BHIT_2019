@@ -1,20 +1,19 @@
 /*
- * FAN(1).h
+ * ACTUATORS.h
  *
  *  Created on: ??þ/??þ/????
  *      Author: manar
  */
 
-#ifndef INCLUDE_FAN_1__H_
-#define INCLUDE_FAN_1__H_
-#include "STD_Type.h"
-#include "st32myReg.h"
+#ifndef ACTUATORS_H_
+#define ACTUATORS_H_
+#include "STD_TYPES.h"
+
 #define FAN_UPPERFAN (1)  //PB6
 #define FAN_LOWERFAN (2)  //PB7
 //**fan will connect to pin PB6.. ..PB7 **//
 void HAL_FAN_Init(void);
-void HAL_FAN_FanOn(u8 FanNumber);
-void HAL_FAN_FanOff(u8 FanNumber);
+void HAL_FAN_On(u8 FanNumber);
+void HAL_FAN_Off(u8 FanNumber);
 
-
-#endif /* INCLUDE_FAN_1__H_ */
+#endif /* ACTUATORS_H_ */
