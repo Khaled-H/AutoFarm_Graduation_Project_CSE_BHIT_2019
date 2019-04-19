@@ -4,8 +4,7 @@
  *  Created on: Apr 3, 2019
  *      Author: Mostafa Samir Nawar		Mostafa.nwar@yahoo.com
  */
-#include "SNSRDR.h"
-#include "BUFFER.h"
+#include "SENSORSREADER.h"
 
 
 static HAL_SENSORS_tTempLvl       LastTempValue;

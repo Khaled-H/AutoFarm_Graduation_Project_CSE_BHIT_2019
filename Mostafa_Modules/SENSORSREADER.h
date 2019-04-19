@@ -7,7 +7,7 @@
 
 #ifndef SNSRDR_H_
 #define SNSRDR_H_
-#include "STD_Types.h"
+#include "STD_TYPES.h"
 #include "SENSORS.h"
 
 extern void APP_SENSORREADER_Init();

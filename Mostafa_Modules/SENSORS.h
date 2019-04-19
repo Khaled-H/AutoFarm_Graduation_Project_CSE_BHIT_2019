@@ -7,7 +7,7 @@
 
 #ifndef SENSORS_H_
 #define SENSORS_H_
-#include "STD_Types.h"
+#include "STD_TYPES.h"
 #include "ADC.h"
 
 /************ TYPES SIZES NEED TO BE REVIEWED BY HARDWARE MAN >> Khaled      ***************/
