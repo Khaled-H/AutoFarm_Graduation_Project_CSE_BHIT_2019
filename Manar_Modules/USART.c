@@ -4,13 +4,18 @@
  *  Created on: ??þ/??þ/????
  *      Author: manar
  */
-/*
- * UART.c
- *
- *  Created on: Mar 1, 2019
- *      Author: Mostafa Samir Nawar
- */
-#include "UART.h"
+#include "USART.h"
+typedef struct {
+	HWREG32 SR;
+	HWREG32 DR;
+	HWREG32 BRR;
+	HWREG32 CR1;
+	HWREG32 CR2;
+	HWREG32 CR3;
+	HWREG32 GTPR;
+}USART1_typedef;
+
+#define USART1  (*((volatile USART1_typedef * const )(0x40013800)))
 
 
 void MCAL_UART1_Init(void){
@@ -42,3 +47,5 @@ u8 MCAL_UART1_ReadByte(void){
 	 while(USART1.SR.Bit05==0); //wait until recieve is complete
      return ((u8) (USART1.DR && 0xFF));   //return(0xFF & USART1.DR)?? return readed data
 }
+
+

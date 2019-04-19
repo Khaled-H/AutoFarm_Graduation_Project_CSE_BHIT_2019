@@ -1,15 +1,14 @@
 /*
- * Process.c
+ * PROCESS.c
  *
- *  Created on: Apr 10, 2019
- *      Author: Mostafa Samir Nawar		Mostafa.nwar@yahoo.com
+ *  Created on: ??þ/??þ/????
+ *      Author: manar
  */
-
-
 #include "PROCESS.h"
 
 /*
-  tM1_State PROC_M1_State(void){
+
+tM1_State PROC_M1_State(void){
   return M1_State ;
 }
 
@@ -24,17 +23,19 @@ void PROC_M1_OFF(void){
 **/
 void APP_PROCESS_Init(void)
 {
-	HAL_FAN_FanInit();
+	HAL_FAN_Init();
 }
 APP_PROCESS_Process(void){
     if(APP_SENSORS_GetTempLvl()==35)
       {
-        HAL_FAN_FanOn(u8 FanNumber);
+    	HAL_FAN_On(u8 FanNumber);
        }
       else
       {
-    	HAL_FAN_FanOff(u8 FanNumber);
+    	HAL_FAN_Off(u8 FanNumber);
       }
 
 
     }
+
+

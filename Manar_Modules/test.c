@@ -1,8 +1,0 @@
-/*
- * test.c
- *
- *  Created on: ??þ/??þ/????
- *      Author: manar
- */
-
-
