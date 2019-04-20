@@ -8,8 +8,9 @@
 #ifndef PORT_H_
 #define PORT_H_
 
-#include "DIO.h"
 #include "STD_TYPES.h"
+#include "DIO.h"
+
 
 /*************************************************************
 **********************   HAL_SENSORS  ******************
@@ -106,7 +107,7 @@
 ********************************************************************/
 
 /***  PORT/PIN CONFIGURATION   ***/
-extern void MCAL_PORT_Init(void);
+extern void MCAL_PORT_Init();
 
 
 
