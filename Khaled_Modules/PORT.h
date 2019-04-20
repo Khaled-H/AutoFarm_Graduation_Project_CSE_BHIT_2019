@@ -20,12 +20,12 @@
 #define  HAL_SENSORS_TEMP_PORT           (2)
 #define  HAL_SENSORS_HUMMIDY_PORT        (1)
 #define  HAL_SENSORS_AMONNIA_PORT        (2)
-#define  HAL_SENSORS_COLEVEL_PORT        (1)
+#define  HAL_SENSORS_CO2LEVEL_PORT        (1)
 /***   PIN NUMBER  ***/
 #define  HAL_SENSORS_TEMP_PIN            (0)
 #define  HAL_SENSORS_HUMMIDY_PIN         (7)
 #define  HAL_SENSORS_AMONNIA_PIN         (1)
-#define  HAL_SENSORS_COLEVEL_PIN         (6)
+#define  HAL_SENSORS_CO2LEVEL_PIN         (6)
 
 
 /*************************************************************
@@ -57,12 +57,12 @@
 /***   PORT NUMBER  ***/
 #define  HAL_SWITCHES_MODESW_PORT          (1)
 #define  HAL_SWITCHES_OKSW_PORT            (2)
-#define  HAL_SWITCHES_PLUS_PORT            (2)
+#define  HAL_SWITCHES_PLUSSW_PORT            (2)
 #define  HAL_SWITCHES_MINUSSW_PORT         (2)
 /***   PIN NUMBER  ***/
 #define  HAL_SWITCHES_MODESW_PIN           (1)
 #define  HAL_SWITCHES_OKSW_PIN             (2)
-#define  HAL_SWITCHES_PLUS_PIN             (2)
+#define  HAL_SWITCHES_PLUSSW_PIN             (2)
 #define  HAL_SWITCHES_MINUSSW_PIN          (2)
 
 
@@ -85,12 +85,12 @@
 *************************************************************/
 
 /***  SYSTEM  INDICATOR  ***/
-#define  HAL_NORMALMODE_LED_PORT       (01)
-#define  HAL_OTA_LED_PORT              (01)
+#define  HAL_LEDS_NORMALMODELED_PORT       (01)
+#define  HAL_LEDS_OTALED_PORT              (01)
 #define  HAL_BUZZER_PORT               (01)
 /***   PIN NUMBER  ***/
-#define  HAL_NORMALMODE_LED_PIN        (01)
-#define  HAL_OTA_LED_PIN               (01)
+#define  HAL_LEDS_NORMALMODELED_PORT        (01)
+#define  HAL_LEDS_OTALED_PORT               (01)
 #define  HAL_BUZZER_PIN                (01)
 
 
