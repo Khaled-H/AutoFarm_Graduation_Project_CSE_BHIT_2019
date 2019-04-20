@@ -20,12 +20,12 @@
 #define  HAL_SENSORS_TEMP_PORT           (2)
 #define  HAL_SENSORS_HUMMIDY_PORT        (1)
 #define  HAL_SENSORS_AMONNIA_PORT        (2)
-#define  HAL_SENSORS_CO2LEVEL_PORT        (1)
+#define  HAL_SENSORS_COLEVEL_PORT        (1)
 /***   PIN NUMBER  ***/
 #define  HAL_SENSORS_TEMP_PIN            (0)
 #define  HAL_SENSORS_HUMMIDY_PIN         (7)
 #define  HAL_SENSORS_AMONNIA_PIN         (1)
-#define  HAL_SENSORS_CO2LEVEL_PIN         (6)
+#define  HAL_SENSORS_COLEVEL_PIN         (6)
 
 
 /*************************************************************
@@ -33,21 +33,24 @@
 *************************************************************/
 
 /***  PORT NUMBER  ***/
-#define  HAL_LCDRS_PORT                  (2)
-#define  HAL_LCDRW_PORT                  (2)
-#define  HAL_LCDEN_PORT                  (2)
-#define  HAL_LCDD4_PORT                  (2)
-#define  HAL_LCDD5_PORT                  (2)
-#define  HAL_LCDD6_PORT                  (1)
-#define  HAL_LCDD7_PORT                  (1)
+#define  HAL_LCD_CONTROLPORT_PORT                  (2)
+
+//#define  HAL_LCDRS_PORT                  (2)
+//#define  HAL_LCDRW_PORT                  (2)
+//#define  HAL_LCDEN_PORT                  (2)
+#define  HAL_LCD_DATAPORT_PORT                  (2)
+//#define  HAL_LCDD4_PORT                  (2)
+//#define  HAL_LCDD5_PORT                  (2)
+//#define  HAL_LCDD6_PORT                  (1)
+//#define  HAL_LCDD7_PORT                  (1)
 /***   PIN NUMBER  ***/
 #define  HAL_LCDRS_PIN                   (2)
 #define  HAL_LCDRW_PIN                   (2)
 #define  HAL_LCDEN_PIN                   (2)
-#define  HAL_LCDD4_PIN                   (2)
-#define  HAL_LCDD5_PIN                   (2)
-#define  HAL_LCDD6_PIN                   (1)
-#define  HAL_LCDD7_PIN                   (1)
+//#define  HAL_LCDD4_PIN                   (2)
+//#define  HAL_LCDD5_PIN                   (2)
+//#define  HAL_LCDD6_PIN                   (1)
+//#define  HAL_LCDD7_PIN                   (1)
 
 
 /*************************************************************
