@@ -8,6 +8,7 @@
 #ifndef SWITCHES_H_
 #define SWITCHES_H_
 #include "STD_TYPES.h"
+#include "PORT.h"
 #include "DIO.h"
 /*************      REVIEWED by HARDWARE Man >> Khaled      ***************/
 typedef enum{

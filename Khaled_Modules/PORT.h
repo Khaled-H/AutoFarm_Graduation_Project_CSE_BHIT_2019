@@ -92,8 +92,8 @@
 #define  HAL_LEDS_OTALED_PORT              (01)
 #define  HAL_BUZZER_PORT               (01)
 /***   PIN NUMBER  ***/
-#define  HAL_LEDS_NORMALMODELED_PORT        (01)
-#define  HAL_LEDS_OTALED_PORT               (01)
+#define  HAL_LEDS_NORMALMODELED_PIN        (01)
+#define  HAL_LEDS_OTALED_PIN               (01)
 #define  HAL_BUZZER_PIN                (01)
 
 
