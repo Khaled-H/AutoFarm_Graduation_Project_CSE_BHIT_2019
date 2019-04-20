@@ -109,6 +109,39 @@ switch (PortNumber)
 }
 return InputPin;
 }
+/*********************     Toggle a Full DIO Port    ********************/
+extern void                MCAL_DIO_TogglePort(DIO_Port_Number PortNumber){
+  MCAL_DIO_tPortWidth ones = ~((MCAL_DIO_tPortWidth)0);
+  switch (PortNumber)
+  {
+      case PORTA :
+      DIO_PORTA.DIO_ODR ^=  ones ;
+      break;
+      case PORTB :
+      DIO_PORTB.DIO_ODR ^=  ones ;
+      break;
+      case PORTC :
+      DIO_PORTC.DIO_ODR ^=  ones ;
+      break;
+  }
+}
+
+
+/*********************     Toggle a Pin from a Port    ********************/
+extern void                MCAL_DIO_TogglePin (DIO_Port_Number PortNumber, u8 PinNumber){
+  switch (PortNumber)
+    {
+        case PORTA :
+        DIO_PORTA.DIO_ODR ^= (MCAL_DIO_tPortWidth)(1<<PinNumber);
+        break;
+        case PORTB :
+        DIO_PORTB.DIO_ODR ^=  (MCAL_DIO_tPortWidth)(1<<PinNumber);
+        break;
+        case PORTC :
+        DIO_PORTC.DIO_ODR ^=  (MCAL_DIO_tPortWidth)(1<<PinNumber);
+        break;
+    }
+}
 
 
 
