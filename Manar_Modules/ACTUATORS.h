@@ -8,6 +8,7 @@
 #ifndef ACTUATORS_H_
 #define ACTUATORS_H_
 #include "STD_TYPES.h"
+#include "DIO.h"
 
 #define FAN_UPPERFAN (1)  //PB6
 #define FAN_LOWERFAN (2)  //PB7
