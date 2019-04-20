@@ -33,20 +33,20 @@
 *************************************************************/
 
 /***  PORT NUMBER  ***/
-#define  HAL_LCD_CONTROLPORT_PORT                  (2)
+#define  HAL_LCD_CONTROL_PORT                  (2)
 
 //#define  HAL_LCDRS_PORT                  (2)
 //#define  HAL_LCDRW_PORT                  (2)
 //#define  HAL_LCDEN_PORT                  (2)
-#define  HAL_LCD_DATAPORT_PORT                  (2)
+#define  HAL_LCD_DATA_PORT                  (2)
 //#define  HAL_LCDD4_PORT                  (2)
 //#define  HAL_LCDD5_PORT                  (2)
 //#define  HAL_LCDD6_PORT                  (1)
 //#define  HAL_LCDD7_PORT                  (1)
 /***   PIN NUMBER  ***/
-#define  HAL_LCDRS_PIN                   (2)
-#define  HAL_LCDRW_PIN                   (2)
-#define  HAL_LCDEN_PIN                   (2)
+#define  HAL_LCD_RS_PIN                   (2)
+#define  HAL_LCD_RW_PIN                   (2)
+#define  HAL_LCD_EN_PIN                   (2)
 //#define  HAL_LCDD4_PIN                   (2)
 //#define  HAL_LCDD5_PIN                   (2)
 //#define  HAL_LCDD6_PIN                   (1)
