@@ -1,8 +1,0 @@
-/*
- * file.c
- *
- *  Created on: ??þ/??þ/????
- *      Author: manar
- */
-
-
