@@ -33,21 +33,24 @@
 *************************************************************/
 
 /***  PORT NUMBER  ***/
-#define  HAL_LCDRS_PORT                  (2)
-#define  HAL_LCDRW_PORT                  (2)
-#define  HAL_LCDEN_PORT                  (2)
-#define  HAL_LCDD4_PORT                  (2)
-#define  HAL_LCDD5_PORT                  (2)
-#define  HAL_LCDD6_PORT                  (1)
-#define  HAL_LCDD7_PORT                  (1)
+#define  HAL_LCD_CONTROL_PORT                  (2)
+
+//#define  HAL_LCDRS_PORT                  (2)
+//#define  HAL_LCDRW_PORT                  (2)
+//#define  HAL_LCDEN_PORT                  (2)
+#define  HAL_LCD_DATA_PORT                  (2)
+//#define  HAL_LCDD4_PORT                  (2)
+//#define  HAL_LCDD5_PORT                  (2)
+//#define  HAL_LCDD6_PORT                  (1)
+//#define  HAL_LCDD7_PORT                  (1)
 /***   PIN NUMBER  ***/
-#define  HAL_LCDRS_PIN                   (2)
-#define  HAL_LCDRW_PIN                   (2)
-#define  HAL_LCDEN_PIN                   (2)
-#define  HAL_LCDD4_PIN                   (2)
-#define  HAL_LCDD5_PIN                   (2)
-#define  HAL_LCDD6_PIN                   (1)
-#define  HAL_LCDD7_PIN                   (1)
+#define  HAL_LCD_RS_PIN                   (2)
+#define  HAL_LCD_RW_PIN                   (2)
+#define  HAL_LCD_EN_PIN                   (2)
+//#define  HAL_LCDD4_PIN                   (2)
+//#define  HAL_LCDD5_PIN                   (2)
+//#define  HAL_LCDD6_PIN                   (1)
+//#define  HAL_LCDD7_PIN                   (1)
 
 
 /*************************************************************
@@ -57,12 +60,12 @@
 /***   PORT NUMBER  ***/
 #define  HAL_SWITCHES_MODESW_PORT          (1)
 #define  HAL_SWITCHES_OKSW_PORT            (2)
-#define  HAL_SWITCHES_PLUS_PORT            (2)
+#define  HAL_SWITCHES_PLUSSW_PORT            (2)
 #define  HAL_SWITCHES_MINUSSW_PORT         (2)
 /***   PIN NUMBER  ***/
 #define  HAL_SWITCHES_MODESW_PIN           (1)
 #define  HAL_SWITCHES_OKSW_PIN             (2)
-#define  HAL_SWITCHES_PLUS_PIN             (2)
+#define  HAL_SWITCHES_PLUSSW_PIN             (2)
 #define  HAL_SWITCHES_MINUSSW_PIN          (2)
 
 
@@ -85,12 +88,12 @@
 *************************************************************/
 
 /***  SYSTEM  INDICATOR  ***/
-#define  HAL_NORMALMODE_LED_PORT       (01)
-#define  HAL_OTA_LED_PORT              (01)
+#define  HAL_LEDS_NORMALMODELED_PORT       (01)
+#define  HAL_LEDS_OTALED_PORT              (01)
 #define  HAL_BUZZER_PORT               (01)
 /***   PIN NUMBER  ***/
-#define  HAL_NORMALMODE_LED_PIN        (01)
-#define  HAL_OTA_LED_PIN               (01)
+#define  HAL_LEDS_NORMALMODELED_PORT        (01)
+#define  HAL_LEDS_OTALED_PORT               (01)
 #define  HAL_BUZZER_PIN                (01)
 
 
