@@ -27,7 +27,7 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-Khaled_Modules \
+Manar_Modules \
 Mostafa_Modules \
 system/src/cmsis \
 system/src/cortexm \
