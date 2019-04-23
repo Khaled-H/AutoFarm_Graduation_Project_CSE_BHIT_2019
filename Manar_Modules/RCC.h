@@ -8,6 +8,7 @@
 #ifndef RCC_H_
 #define RCC_H_
 #include "STD_TYPES.h"
+#include "DIO.h"
 typedef struct {
 	HWREG32 CR;
 	HWREG32 CFGR;
@@ -21,5 +22,8 @@ typedef struct {
 	HWREG32 CSR;
 }RCC_typedef;
 #define RCC   (*(( volatile RCC_typedef* const )(0x40021000)))
-void MCAL_RCC_RCCInit(void);
+
+void MCAL_RCC_Init(void);
+void MCAL_RCC_PortEnable(u8 PortNumber);
+void MCAL_RCC_Uart1Enable(void);
 #endif /* RCC_H_ */

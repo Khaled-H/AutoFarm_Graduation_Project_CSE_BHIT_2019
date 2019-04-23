@@ -7,6 +7,19 @@
 #include "USART.h"
 
 
+typedef struct {
+	HWREG32 SR;
+	HWREG32 DR;
+	HWREG32 BRR;
+	HWREG32 CR1;
+	HWREG32 CR2;
+	HWREG32 CR3;
+	HWREG32 GTPR;
+}USART1_typedef;
+
+#define USART1  (*((volatile USART1_typedef * const )(0x40013800)))
+
+
 void MCAL_UART1_Init(void){
 
 /* Init the UART module Connections and Mode as
@@ -14,9 +27,8 @@ void MCAL_UART1_Init(void){
 	//enable Cloack GPIOA
 	//Enable Clock to USART 1
 	//SET PA9 and PA10 as outpout pins
-	RCC.APB2ENR.Bit02=1;
-	RCC.APB1ENR.Bit14=1;
-	RCC.APB1ENR.Bit00=1; //AFIO
+	MCAL_RCC_PortEnable(PORTA);
+	MCAL_RCC_Uart1Enable();
 	USART1.BRR.REG_FULL_32=(u32)0x00000341; //baud rate 9600
 	 //enable recieved bit
 	 //transmit enable
