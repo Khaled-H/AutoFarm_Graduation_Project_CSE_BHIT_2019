@@ -44,17 +44,17 @@ extern void HAL_LCD_WriteChar(u8 Value)
 {
 MCAL_DIO_WritePort(HAL_LCD_DATA_PORT,Value);
 MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_RS_PIN,DATA);
-MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_RW_PIN,WRITE);
+
 MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITHIGH);
 _delay_ms(1);
 MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITLOW);
 }
 //************************************************
-extern void LCD_voidWriteCommand(u8 Value)
+extern void HAL_LCD_WriteCommand(u8 Value)
 {
 	MCAL_DIO_WritePort(HAL_LCD_DATA_PORT,Value);
 	MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_RS_PIN,COMMAND);
-	MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_RW_PIN,WRITE);
+
 	MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITHIGH);
     _delay_ms(1);
     MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITLOW);
