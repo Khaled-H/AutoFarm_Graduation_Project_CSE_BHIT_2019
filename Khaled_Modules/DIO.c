@@ -9,7 +9,7 @@
 
 /****************    write a word to a given port    ****************/
 
-extern void MCAL_DIO_WritePort(DIO_Port_Number PortNumber,u32 Value)
+extern void MCAL_DIO_WritePort(MCAL_DIO_tPortNum PortNumber,u32 Value)
 {
 switch (PortNumber)
 {
@@ -27,7 +27,7 @@ switch (PortNumber)
 
 /****************     set/reset pin of a given  port   *****************/
 
-extern void MCAL_DIO_WritePin(DIO_Port_Number PortNumber,u8 Value , u8 PinNumber)
+extern void MCAL_DIO_WritePin(MCAL_DIO_tPortNum PortNumber,u8 Value , u8 PinNumber)
 {
 switch (PortNumber)
 {
@@ -69,7 +69,7 @@ switch (PortNumber)
 
 /*********************     read a word from a given port    ********************/
 
-extern MCAL_DIO_tPortWidth MCAL_DIO_ReadPort(DIO_Port_Number PortNumber)
+extern MCAL_DIO_tPortWidth MCAL_DIO_ReadPort(MCAL_DIO_tPortNum PortNumber)
 {
 MCAL_DIO_tPortWidth Input_Value = 0;
 	switch (PortNumber)
@@ -90,7 +90,7 @@ MCAL_DIO_tPortWidth Input_Value = 0;
 
 /*********************     read a pin from a given port      *************************/
 
-extern STD_tLogic MCAL_DIO_ReadPin(DIO_Port_Number PortNumber ,u8 PinNumber)
+extern STD_tLogic MCAL_DIO_ReadPin(MCAL_DIO_tPortNum PortNumber ,u8 PinNumber)
 {
 STD_tLogic InputPin = 0;
 switch (PortNumber)
@@ -110,7 +110,7 @@ switch (PortNumber)
 return InputPin;
 }
 /*********************     Toggle a Full DIO Port    ********************/
-extern void                MCAL_DIO_TogglePort(DIO_Port_Number PortNumber){
+extern void                MCAL_DIO_TogglePort(MCAL_DIO_tPortNum PortNumber){
   MCAL_DIO_tPortWidth ones = ~((MCAL_DIO_tPortWidth)0);
   switch (PortNumber)
   {
@@ -128,7 +128,7 @@ extern void                MCAL_DIO_TogglePort(DIO_Port_Number PortNumber){
 
 
 /*********************     Toggle a Pin from a Port    ********************/
-extern void                MCAL_DIO_TogglePin (DIO_Port_Number PortNumber, u8 PinNumber){
+extern void                MCAL_DIO_TogglePin (MCAL_DIO_tPortNum PortNumber, u8 PinNumber){
   switch (PortNumber)
     {
         case PORTA :
