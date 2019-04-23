@@ -8,6 +8,16 @@
 #ifndef RCC_H_
 #define RCC_H_
 #include "STD_TYPES.h"
+typedef enum
+{
+MCAL_RCC_PORTA,
+MCAL_RCC_PORTB,
+MCAL_RCC_PORTC,
+MCSL_RCC_USART1,
+MCAL_RCC_ADC1,
+MCAL_RCC_ADC2,
+MCAL_RCC_ADC3,
+}RCC_TPrepheral_Number;
 typedef struct {
 	HWREG32 CR;
 	HWREG32 CFGR;
@@ -21,5 +31,8 @@ typedef struct {
 	HWREG32 CSR;
 }RCC_typedef;
 #define RCC   (*(( volatile RCC_typedef* const )(0x40021000)))
-void MCAL_RCC_RCCInit(void);
+
+void MCAL_RCC_SystemInit(void);
+void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PortNumber);
+
 #endif /* RCC_H_ */

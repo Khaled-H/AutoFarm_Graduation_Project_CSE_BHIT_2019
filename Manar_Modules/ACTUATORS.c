@@ -9,7 +9,7 @@
 
 void HAL_ACTUATOR_Init(void){
 	//**enable clock to GPIO A  **//
-    RCC.APB2ENR.Bit02=1;
+	MCAL_RCC_PortEnable(PORTA);
     //pits output in openDrain mode and max speed 10MHZ init PB7&PB6 as output //
     MCAL_PORT_Init();
     //not access output data reg//
