@@ -8,7 +8,6 @@
 #ifndef ACTUATORS_H_
 #define ACTUATORS_H_
 #include "STD_TYPES.h"
-#include "DIO.h"
 #include "PORT.h"
 #include "RCC.h"
 //**fan will connect to pin PB6.. ..PB7 **//
