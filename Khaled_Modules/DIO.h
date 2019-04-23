@@ -26,7 +26,7 @@ typedef struct{
 	u32 DIO_BSRR;
 	u32 DIO_BRR;
 	u32 DIO_LCKR;
-}DIO_Type;
+}MCAL_DIO_tPortType;
 
 /*******************    Declaration Of Port Number VS Name    *********************/
 typedef enum
@@ -34,30 +34,28 @@ typedef enum
 PORTA =1,
 PORTB =2,
 PORTC =3
-}DIO_Port_Number;
+}MCAL_DIO_tPortNum;
 
 /***************************************************************************************
                              DIO Registers Base/Offset Addresses
 ***************************************************************************************/
 /**************************** DIO Port  Register Base Addresses **********************/
-#define  DIO_PORTA (*((volatile DIO_Type*const)(0x40010800)))
-#define  DIO_PORTB (*((volatile DIO_Type*const)(0x40010C00)))
-#define  DIO_PORTC (*((volatile DIO_Type*const)(0x40011000)))
+#define  DIO_PORTA (*((volatile MCAL_DIO_tPortType*const)(0x40010800)))
+#define  DIO_PORTB (*((volatile MCAL_DIO_tPortType*const)(0x40010C00)))
+#define  DIO_PORTC (*((volatile MCAL_DIO_tPortType*const)(0x40011000)))
 
-#define PIN_HIGH  (1)
-#define PIN_LOW   (0)
+
 /*************************     DIO Module Functions Prototypes   *******************/
 
 
-extern void                MCAL_DIO_WritePort(DIO_Port_Number PortNumber,u32 Value);
-extern void                MCAL_DIO_WritePin (DIO_Port_Number PortNumber, u8 PinNumber,u8 Value );
-extern MCAL_DIO_tPortWidth MCAL_DIO_ReadPort (DIO_Port_Number PortNumber);
-extern STD_tLogic          MCAL_DIO_ReadPin  (DIO_Port_Number PortNumber ,u8 PinNumber);
-extern void                MCAL_DIO_TogglePort(DIO_Port_Number PortNumber);
-extern void                MCAL_DIO_TogglePin (DIO_Port_Number PortNumber, u8 PinNumber);
+extern void                MCAL_DIO_WritePort(MCAL_DIO_tPortNum PortNumber,u32 Value);
+extern void                MCAL_DIO_WritePin (MCAL_DIO_tPortNum PortNumber, u8 PinNumber,u8 Value );
+extern MCAL_DIO_tPortWidth MCAL_DIO_ReadPort (MCAL_DIO_tPortNum PortNumber);
+extern STD_tLogic          MCAL_DIO_ReadPin  (MCAL_DIO_tPortNum PortNumber ,u8 PinNumber);
+extern void                MCAL_DIO_TogglePort(MCAL_DIO_tPortNum PortNumber);
+extern void                MCAL_DIO_TogglePin (MCAL_DIO_tPortNum PortNumber, u8 PinNumber);
 
 
 
 
 #endif /* DIO_H_ */
-/* fix khaled_modules folder */
