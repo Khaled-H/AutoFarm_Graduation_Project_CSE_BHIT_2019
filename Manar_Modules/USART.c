@@ -24,13 +24,14 @@ void MCAL_UART1_Init(void){
 
 /* Init the UART module Connections and Mode as
  * 9600 bps, 8 bit data, no parity, 1 stop bit */
-	//enable Cloack GPIOA
+	//enable Clock GPIOB
 	//Enable Clock to USART 1
 	//SET PA9 and PA10 as outpout pins
-	MCAL_RCC_PortEnable(PORTA);
+	MCAL_RCC_PortEnable(PORTB);
 	MCAL_RCC_Uart1Enable();
+	AFIO.MAPR.Bit02=1;    // remape register
 	USART1.BRR.REG_FULL_32=(u32)0x00000341; //baud rate 9600
-	 //enable recieved bit
+	 //enable receive bit
 	 //transmit enable
 	//enable USART1
 	USART1.CR1.REG_FULL_32 = (u32)0x0000200C;
@@ -46,8 +47,8 @@ void MCAL_UART1_SendByte(u8 Value ){
 	 while(USART1.SR.Bit06 == 0);
 }
 u8 MCAL_UART1_ReadByte(void){
-/* Just Read The Received Byte From Data Register
- * Then Return it */
+   /* Just Read The Received Byte From Data Register
+    * Then Return it */
 	 while(USART1.SR.Bit05==0); //wait until recieve is complete
      return ((u8) (USART1.DR && 0xFF));   //return(0xFF & USART1.DR)?? return readed data
 }
