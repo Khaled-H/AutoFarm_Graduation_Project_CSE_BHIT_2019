@@ -20,8 +20,8 @@
 #include "STD_TYPES.h"
 #include "DIO.h"
 #include "PORT.h"
-#define RAW1 (1)
-#define RAW2 (2)
+#define HAL_LCD_FIRSTROW (1)
+#define HAL_LCD_SECONDROW (2)
 typedef enum
 {
 C01,
@@ -41,7 +41,7 @@ C14,
 C15,
 C16
 }HAL_LCD_TColom;
-#define HAL_LCD_CLEAR HAL_LCD_WriteCommand(0x01) // Macro for Clearin the LCD
+#define HAL_LCD_CLEAR HAL_LCD_WriteCommand(0x01)  // Macro for Clear in the LCD
 
 extern void HAL_LCD_Init();
 extern void HAL_LCD_WriteChar(u8 Value);
