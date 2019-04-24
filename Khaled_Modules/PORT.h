@@ -9,7 +9,6 @@
 #define PORT_H_
 
 #include "STD_TYPES.h"
-#include "DIO.h"
 
 
 /*************************************************************
@@ -22,10 +21,27 @@
 #define  HAL_SENSORS_AMONNIA_PORT              (1)
 #define  HAL_SENSORS_COLEVEL_PORT              (1)
 /***   PIN NUMBER  ***/
-#define  HAL_SENSORS_TEMP_PIN                  (4)
-#define  HAL_SENSORS_HUMMIDY_PIN               (5)
-#define  HAL_SENSORS_AMONNIA_PIN               (6)
-#define  HAL_SENSORS_COLEVEL_PIN               (7)
+
+typedef enum {
+	MCAL_ADC_CHANNEL00 = 4,
+	MCAL_ADC_CHANNEL01 = 5,
+	MCAL_ADC_CHANNEL02 = 6,
+	MCAL_ADC_CHANNEL03 = 7,
+	MCAL_ADC_CHANNEL04,
+	MCAL_ADC_CHANNEL05,
+	MCAL_ADC_CHANNEL06,
+	MCAL_ADC_CHANNEL07,
+	MCAL_ADC_CHANNEL08,
+	MCAL_ADC_CHANNEL09,
+
+}MCAL_ADC_tChannelType;
+ enum {
+
+	HAL_SENSORS_TEMPCHANNEL = MCAL_ADC_CHANNEL00,
+	HAL_SENSORS_HUMCHANNEL = MCAL_ADC_CHANNEL01,
+	HAL_SENSORS_AMONIACHANNEL = MCAL_ADC_CHANNEL02,
+	HAL_SENSORS_COCHANNEL = MCAL_ADC_CHANNEL03,
+};
 
 
 /*************************************************************
