@@ -48,10 +48,10 @@ PORTC =3
 /*************************     DIO Module Functions Prototypes   *******************/
 
 
-extern void                MCAL_DIO_WritePort(MCAL_DIO_tPortNum PortNumber,u32 Value);
-extern void                MCAL_DIO_WritePin (MCAL_DIO_tPortNum PortNumber, u8 PinNumber,u8 Value );
-extern MCAL_DIO_tPortWidth MCAL_DIO_ReadPort (MCAL_DIO_tPortNum PortNumber);
-extern STD_tLogic          MCAL_DIO_ReadPin  (MCAL_DIO_tPortNum PortNumber ,u8 PinNumber);
+extern void                MCAL_DIO_WritePort (MCAL_DIO_tPortNum PortNumber,u32 Value);
+extern void                MCAL_DIO_WritePin  (MCAL_DIO_tPortNum PortNumber, u8 PinNumber,u8 Value );
+extern MCAL_DIO_tPortWidth MCAL_DIO_ReadPort  (MCAL_DIO_tPortNum PortNumber);
+extern STD_tLogic          MCAL_DIO_ReadPin   (MCAL_DIO_tPortNum PortNumber ,u8 PinNumber);
 extern void                MCAL_DIO_TogglePort(MCAL_DIO_tPortNum PortNumber);
 extern void                MCAL_DIO_TogglePin (MCAL_DIO_tPortNum PortNumber, u8 PinNumber);
 

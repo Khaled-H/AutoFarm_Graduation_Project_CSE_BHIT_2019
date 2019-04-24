@@ -6,7 +6,7 @@
  */
 
 #include "PORT.h"
-
+#include "DIO.h"
 extern void MCAL_PORT_Init()
 {
 
