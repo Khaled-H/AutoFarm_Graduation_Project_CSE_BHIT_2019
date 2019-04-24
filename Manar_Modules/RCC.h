@@ -20,6 +20,6 @@ MCAL_RCC_ADC3,
 }RCC_TPrepheral_Number;
 
 void MCAL_RCC_SystemInit(void);
-void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PrepheralName);
+/*void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PrepheralName);*/
 
 #endif /* RCC_H_ */

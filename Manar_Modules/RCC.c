@@ -30,9 +30,16 @@ void MCAL_RCC_SystemInit(void)
 	/*SW system clock switch**/
 	RCC.CR.REG_FULL_32=(u32)0x00060000;
 	RCC.CFGR.REG_FULL_32=(u32)0x06000005;
-
+	RCC.APB2ENR.REG_FULL_32=(u32)0x00000001; //AFIO
+	RCC.APB2ENR.REG_FULL_32=(u32)0x00000004;
+	RCC.APB2ENR.REG_FULL_32=(u32)0x00000008;
+	RCC.APB2ENR.REG_FULL_32=(u32)0x00000010;
+	RCC.APB2ENR.REG_FULL_32=(u32)0x00004000;
+	RCC.APB2ENR.REG_FULL_32=(u32)0x00000200;
+	RCC.APB2ENR.REG_FULL_32=(u32)0x00000400;
+	RCC.APB2ENR.REG_FULL_32=(u32)0x00008000;
 }
-extern  void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PrepheralName)
+/*extern  void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PrepheralName)
 {
 	switch(PrepheralName)
 	{
@@ -69,6 +76,6 @@ extern  void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PrepheralName)
 			RCC.APB2ENR.REG_FULL_32=(u32)0x00000001; //AFIO
 	        break;
 	}
-}
+}*/
 
 

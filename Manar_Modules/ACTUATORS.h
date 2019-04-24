@@ -9,7 +9,7 @@
 #define ACTUATORS_H_
 #include "STD_TYPES.h"
 #include "PORT.h"
-#include "RCC.h"
+
 //**fan will connect to pin PB6.. ..PB7 **//
 void HAL_ACTUATOR_Init(void);
 void HAL_ACTUATOR_On(u8 FanNumber);

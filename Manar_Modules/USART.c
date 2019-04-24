@@ -27,8 +27,6 @@ void MCAL_UART1_Init(void){
 	//enable Clock GPIOB
 	//Enable Clock to USART 1
 	//SET PA9 and PA10 as outpout pins
-	MCAL_RCC_PrepheralEnable(MCAL_RCC_PORTB);
-	MCAL_RCC_PrepheralEnable(MCSL_RCC_USART1);
 	//*AFIO.MAPR.Bit02=1;    // remape register
 	USART1.BRR.REG_FULL_32=(u32)0x00000341; //baud rate 9600
 	 //enable receive bit

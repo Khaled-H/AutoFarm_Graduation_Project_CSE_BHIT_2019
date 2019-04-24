@@ -8,7 +8,7 @@
 
 void HAL_WIFI_Init(void){
 	/*Init the Wifi Module Connections as UART Connections*/
-	MCAL_UART1_UART1Init();
+	MCAL_UART1_Init();
 }
 /*Synch*/
 void HAL_WIFI_SendByte(u8 Value){
