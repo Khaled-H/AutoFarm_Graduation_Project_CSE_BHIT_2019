@@ -33,6 +33,6 @@ typedef struct {
 #define RCC   (*(( volatile RCC_typedef* const )(0x40021000)))
 
 void MCAL_RCC_SystemInit(void);
-void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PortNumber);
+void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PrepheralNumber);
 
 #endif /* RCC_H_ */
