@@ -9,6 +9,7 @@
 #define ACTUATORS_H_
 #include "STD_TYPES.h"
 #include "PORT.h"
+#include "DIO.h"
 
 //**fan will connect to pin PB6.. ..PB7 **//
 void HAL_ACTUATOR_Init(void);

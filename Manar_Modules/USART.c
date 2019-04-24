@@ -32,7 +32,7 @@ void MCAL_UART1_Init(void){
 	 //enable receive bit
 	 //transmit enable
 	//enable USART1
-	USART1.CR1.REG_FULL_32 = (u32)0x00002000;
+	USART1.CR1.REG_FULL_32 = (u32)0x0000200C;
 
 }
 
@@ -40,7 +40,6 @@ void MCAL_UART1_SendByte(u8 Value ){
 /* Just Send the Argument "Value" to the Data Register */
 	/*9th bit is for parity bit */
   //transfer data to buffer register DR
-	USART1.CR1.REG_FULL_32 = (u32)0x00002008;
      while(USART1.SR.REG_FULL_32==(u32)0x00000080);
 	 USART1.DR.REG_FULL_32 = (u32)Value; //wait to transimmion to complete
 	 while(USART1.SR.REG_FULL_32==(u32)0x00000040);
@@ -48,7 +47,7 @@ void MCAL_UART1_SendByte(u8 Value ){
 u8 MCAL_UART1_ReadByte(void){
    /* Just Read The Received Byte From Data Register
     * Then Return it */
-	USART1.CR1.REG_FULL_32 = (u32)0x00002004;
+
 	 while(USART1.SR.REG_FULL_32==(u32)0x00000020); //wait until recieve is complete
      return ((u8)(USART1.DR && 0xFF));   //return(0xFF & USART1.DR)?? return readed data
 }

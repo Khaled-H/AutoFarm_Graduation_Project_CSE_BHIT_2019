@@ -22,25 +22,22 @@
 #include "PORT.h"
 #define HAL_LCD_FIRSTROW (1)
 #define HAL_LCD_SECONDROW (2)
-typedef enum
-{
-C01,
-C02,
-C03,
-C04,
-C05,
-C06,
-C07,
-C08,
-C09,
-C10,
-C11,
-C12,
-C13,
-C14,
-C15,
-C16
-}HAL_LCD_TColom;
+#define HAL_LCD_COLUMN1 (1)
+#define HAL_LCD_COLUMN2 (2)
+#define HAL_LCD_COLUMN3 (3)
+#define HAL_LCD_COLUMN4 (4)
+#define HAL_LCD_COLUMN5 (5)
+#define HAL_LCD_COLUMN6 (6)
+#define HAL_LCD_COLUMN7 (7)
+#define HAL_LCD_COLUMN8 (8)
+#define HAL_LCD_COLUMN9  (9)
+#define HAL_LCD_COLUMN10 (10)
+#define HAL_LCD_COLUMN11 (11)
+#define HAL_LCD_COLUMN12 (12)
+#define HAL_LCD_COLUMN13 (13)
+#define HAL_LCD_COLUMN14 (14)
+#define HAL_LCD_COLUMN15 (15)
+#define HAL_LCD_COLUMN16 (16)
 #define HAL_LCD_CLEAR HAL_LCD_WriteCommand(0x01)  // Macro for Clear in the LCD
 
 extern void HAL_LCD_Init();

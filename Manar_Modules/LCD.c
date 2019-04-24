@@ -83,55 +83,55 @@ extern void HAL_LCD_WriteNumber(u8 Value)
     HAL_LCD_WriteChar((temp/10)+48);
     HAL_LCD_WriteChar((temp%10)+48);
 }
-extern void HAL_LCD_SetCursor(u8 RowNumber,HAL_LCD_TColom ColomNumber){
+extern void HAL_LCD_SetCursor(u8 RowNumber,u8 ColomNumber){
      	if(RowNumber==1){
 		switch (ColomNumber) {
-		case C01:
+		case HAL_LCD_COLUMN1:
 			HAL_LCD_WriteCommand(0x80);
 			break;
-		case C02:
+		case HAL_LCD_COLUMN2:
 			HAL_LCD_WriteCommand(0x81);
 			break;
-		case C03:
+		case HAL_LCD_COLUMN3:
 			HAL_LCD_WriteCommand(0x82);
 			break;
-		case C04:
+		case HAL_LCD_COLUMN4:
 			HAL_LCD_WriteCommand(0x83);
 			break;
-		case C05:
+		case HAL_LCD_COLUMN5:
 			HAL_LCD_WriteCommand(0x84);
 			break;
-		case C06:
+		case HAL_LCD_COLUMN6:
 			HAL_LCD_WriteCommand(0x85);
 			break;
-		case C07:
+		case HAL_LCD_COLUMN7:
 			HAL_LCD_WriteCommand(0x86);
 			break;
-		case C08:
+		case HAL_LCD_COLUMN8:
 			HAL_LCD_WriteCommand(0x87);
 			break;
-		case C09:
+		case HAL_LCD_COLUMN9:
 			HAL_LCD_WriteCommand(0x88);
 			break;
-		case C10:
+		case HAL_LCD_COLUMN10:
 			HAL_LCD_WriteCommand(0x89);
 			break;
-		case C11:
+		case HAL_LCD_COLUMN11:
 			HAL_LCD_WriteCommand(0x8A);
 			break;
-		case C12:
+		case HAL_LCD_COLUMN12:
 			HAL_LCD_WriteCommand(0x8B);
 			break;
-		case C13:
+		case HAL_LCD_COLUMN13:
 			HAL_LCD_WriteCommand(0x8C);
 			break;
-		case C14:
+		case HAL_LCD_COLUMN14:
 			HAL_LCD_WriteCommand(0x8D);
 			break;
-		case C15:
+		case HAL_LCD_COLUMN15:
 			HAL_LCD_WriteCommand(0x8E);
 			break;
-		case C16:
+		case HAL_LCD_COLUMN16:
 			HAL_LCD_WriteCommand(0x8F);
 			break;
 		}
@@ -139,52 +139,52 @@ extern void HAL_LCD_SetCursor(u8 RowNumber,HAL_LCD_TColom ColomNumber){
      	else {
 			switch (ColomNumber)
 			{
-			case C01:
+			case HAL_LCD_COLUMN1:
 				HAL_LCD_WriteCommand(0xC0);
 				break;
-			case C02:
+			case HAL_LCD_COLUMN2:
 				HAL_LCD_WriteCommand(0xC1);
 				break;
-			case C03:
+			case HAL_LCD_COLUMN3:
 				HAL_LCD_WriteCommand(0xC2);
 				break;
-			case C04:
+			case HAL_LCD_COLUMN4:
 				HAL_LCD_WriteCommand(0xC3);
 				break;
-			case C05:
+			case HAL_LCD_COLUMN5:
 				HAL_LCD_WriteCommand(0xC4);
 				break;
-			case C06:
+			case HAL_LCD_COLUMN6:
 				HAL_LCD_WriteCommand(0xC5);
 				break;
-			case C07:
+			case HAL_LCD_COLUMN7:
 				HAL_LCD_WriteCommand(0xC6);
 				break;
-			case C08:
+			case HAL_LCD_COLUMN8:
 				HAL_LCD_WriteCommand(0xC7);
 				break;
-			case C09:
+			case HAL_LCD_COLUMN9:
 				HAL_LCD_WriteCommand(0xC8);
 				break;
-			case C10:
+			case HAL_LCD_COLUMN10:
 				HAL_LCD_WriteCommand(0xC9);
 				break;
-			case C11:
+			case HAL_LCD_COLUMN11:
 				HAL_LCD_WriteCommand(0xCA);
 				break;
-			case C12:
+			case HAL_LCD_COLUMN12:
 				HAL_LCD_WriteCommand(0xCB);
 				break;
-			case C13:
+			case HAL_LCD_COLUMN13:
 				HAL_LCD_WriteCommand(0xCC);
 				break;
-			case C14:
+			case HAL_LCD_COLUMN14:
 				HAL_LCD_WriteCommand(0xCD);
 				break;
-			case C15:
+			case HAL_LCD_COLUMN15:
 				HAL_LCD_WriteCommand(0xCE);
 				break;
-			case C16:
+			case HAL_LCD_COLUMN16:
 				HAL_LCD_WriteCommand(0xCF);
 				break;
 			}
