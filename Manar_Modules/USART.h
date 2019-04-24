@@ -8,16 +8,7 @@
 #ifndef USART_H_
 #define USART_H_
 #include "STD_TYPES.h"
-#include "RCC.h"
-typedef struct {
-    HWREG32 EVCR ;
-    HWREG32 MAPR ;
-    HWREG32 EXTICR1 ;
-    HWREG32 EXTICR2;
-    HWREG32 EXTICR3;
-    HWREG32 EXTICR4 ;
-}AFIO_typedef;
-#define AFIO (*((volatile AFIO_typedef*const )(0x40010000)))
+#include "RCC.h")
 
 void MCAL_UART1_Init(void);
 /*Synch*/
