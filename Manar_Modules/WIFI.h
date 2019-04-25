@@ -35,8 +35,4 @@ void HAL_WIFI_SendByte(u8 Value);
 void HAL_WIFI_ReadByte(void);
 
 
-
-
-
-
 #endif /* WIFI_H_ */

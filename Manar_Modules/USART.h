@@ -8,8 +8,6 @@
 #ifndef USART_H_
 #define USART_H_
 #include "STD_TYPES.h"
-
-
 void MCAL_UART1_Init(void);
 /*Synch*/
 void MCAL_UART1_SendByte(u8 Value );
