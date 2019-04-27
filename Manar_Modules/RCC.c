@@ -29,7 +29,7 @@ void MCAL_RCC_SystemInit(void)
 	/*SWS system clock switch*/
 	/*SW system clock switch**/
 	RCC.CR.REG_FULL_32=(u32)0x00050000;
-	RCC.CFGR.REG_FULL_32=(u32)0x06000001;
+	RCC.CFGR.REG_FULL_32=(u32)0x06000005;
 	RCC.APB2ENR.REG_FULL_32=(u32)0x0000C61D;
 }
 /*extern  void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PrepheralName)
