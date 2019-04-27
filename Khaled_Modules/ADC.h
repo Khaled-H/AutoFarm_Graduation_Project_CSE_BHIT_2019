@@ -9,31 +9,32 @@
 #define ADC_H_
 
 #include "STD_TYPES.h"
+#include "PORT.h"
 
 /*********** MCAL_ADC data_types *************/
 typedef u32 MCAL_ADC_tInputData;
 typedef struct
 {
-	HWREG32 SR;
-	HWREG32 CR1;
-	HWREG32 CR2;
-	HWREG32 SMPR1;
-	HWREG32 SMPR2;
-	HWREG32 JOFR1;
-	HWREG32 JOFR2;
-	HWREG32 JOFR3;
-	HWREG32 JOFR4;
-	HWREG32 HTR;
-	HWREG32 LTR;
-	HWREG32 SQR1;
-	HWREG32 SQR2;
-	HWREG32 SQR3;
-	HWREG32 JSQR;
-	HWREG32 JDR1;
-	HWREG32 JDR2;
-	HWREG32 JDR3;
-	HWREG32 JDR4;
-	HWREG32 DR;
+	u32 SR;
+	u32 CR1;
+	u32 CR2;
+	u32 SMPR1;
+	u32 SMPR2;
+	u32 JOFR1;
+	u32 JOFR2;
+	u32 JOFR3;
+	u32 JOFR4;
+	u32 HTR;
+	u32 LTR;
+	u32 SQR1;
+	u32 SQR2;
+	u32 SQR3;
+	u32 JSQR;
+	u32 JDR1;
+	u32 JDR2;
+	u32 JDR3;
+	u32 JDR4;
+	u32 DR;
 } MCAL_ADC_tType;
 
 /*** ADC1 base address  ***/
