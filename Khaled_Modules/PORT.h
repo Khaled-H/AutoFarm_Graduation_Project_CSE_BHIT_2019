@@ -12,8 +12,8 @@
 
 
 /*************************************************************
-**********************   HAL_SENSORS  ******************
-*************************************************************/
+ **********************   HAL_SENSORS  ******************
+ *************************************************************/
 
 /***   PORT NUMBER  ***/
 #define  HAL_SENSORS_TEMP_PORT                 (1)
@@ -23,30 +23,31 @@
 /***   PIN NUMBER  ***/
 
 typedef enum {
-	MCAL_ADC_CHANNEL00 = 4,
-	MCAL_ADC_CHANNEL01 = 5,
-	MCAL_ADC_CHANNEL02 = 6,
-	MCAL_ADC_CHANNEL03 = 7,
-	MCAL_ADC_CHANNEL04,
-	MCAL_ADC_CHANNEL05,
-	MCAL_ADC_CHANNEL06,
-	MCAL_ADC_CHANNEL07,
-	MCAL_ADC_CHANNEL08,
-	MCAL_ADC_CHANNEL09,
+	MCAL_ADC_CHANNEL00 = 0,
+	MCAL_ADC_CHANNEL01 = 1,
+	MCAL_ADC_CHANNEL02 = 2,
+	MCAL_ADC_CHANNEL03 = 3,
+	MCAL_ADC_CHANNEL04 = 4,
+	MCAL_ADC_CHANNEL05 = 5,
+	MCAL_ADC_CHANNEL06 = 6,
+	MCAL_ADC_CHANNEL07 = 7,
+	MCAL_ADC_CHANNEL08 = 8,
+	MCAL_ADC_CHANNEL09 = 9,
 
 }MCAL_ADC_tChannelType;
- enum {
 
-	HAL_SENSORS_TEMPCHANNEL = MCAL_ADC_CHANNEL00,
-	HAL_SENSORS_HUMCHANNEL = MCAL_ADC_CHANNEL01,
-	HAL_SENSORS_AMONIACHANNEL = MCAL_ADC_CHANNEL02,
-	HAL_SENSORS_COCHANNEL = MCAL_ADC_CHANNEL03,
+ enum MCAL_ADC_tChannelType {
+
+	HAL_SENSORS_TEMPCHANNEL    = MCAL_ADC_CHANNEL04,
+	HAL_SENSORS_HUMCHANNEL     = MCAL_ADC_CHANNEL05,
+	HAL_SENSORS_AMONIACHANNEL  = MCAL_ADC_CHANNEL06,
+	HAL_SENSORS_COCHANNEL      = MCAL_ADC_CHANNEL07,
 };
 
 
 /*************************************************************
-**********************   HAL_LCD  **********************
-*************************************************************/
+ **********************   HAL_LCD  **********************
+ *************************************************************/
 
 /***  PORT NUMBER  ***/
 #define  HAL_LCD_CONTROL_PORT                  (1)
@@ -57,8 +58,8 @@ typedef enum {
 
 
 /*************************************************************
-**********************   HAL_SWITCHES  **********************
-*************************************************************/
+ **********************   HAL_SWITCHES  **********************
+ *************************************************************/
 
 /***   PORT NUMBER  ***/
 #define  HAL_SWITCHES_MODESW_PORT              (1)
@@ -73,8 +74,8 @@ typedef enum {
 
 
 /*************************************************************
-**********************   HAL_ACTUATORS  ****************
-*************************************************************/
+ **********************   HAL_ACTUATORS  ****************
+ *************************************************************/
 
 /***   PORT NUMBER  ***/
 #define  HAL_ACTUATORS_UPPERFAN_PORT           (1)
@@ -87,8 +88,8 @@ typedef enum {
 
 
 /*************************************************************
-*******************   HAL_INDICATORS  ******************
-*************************************************************/
+ *******************   HAL_INDICATORS  ******************
+ *************************************************************/
 
 /***  SYSTEM  INDICATOR  ***/
 #define  HAL_LEDS_NORMALMODELED_PORT          (01)
@@ -101,8 +102,8 @@ typedef enum {
 
 
 /*************************************************************
-**********************   HAL_UART  ***************************
-*************************************************************/
+ **********************   HAL_UART  ***************************
+ *************************************************************/
 
 /***   PORT NUMBER  ***/
 #define  HAL_WIFI_TX_PORT                      (2)
@@ -113,8 +114,8 @@ typedef enum {
 
 
 /********************************************************************
-*****************  HAL_ Functions Prototypes  *****************
-********************************************************************/
+ *****************  HAL_ Functions Prototypes  *****************
+ ********************************************************************/
 
 /***  PORT/PIN CONFIGURATION   ***/
 extern void MCAL_PORT_Init();
