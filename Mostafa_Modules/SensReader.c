@@ -38,9 +38,9 @@ extern HAL_SENSORS_tCo2Lvl APP_SENSORREADER_GetCo2Lvl(){
 extern void APP_SENSORREADER_TaskLvlsUpdate(){
   LastAmoniaValue=HAL_SENSORS_GetAmoniaLvl();
   //Amonia_Buffer_Push(LastAmoniaValue);
-  LastTempValue = HAL_SENSORS_GetTempLvl();
+  LastTempValue =HAL_SENSORS_GetDH22Lvl(GetTempreture);
   //Temp_Buffer_Push(LastTempValue);
-  LastHumValue=HAL_SENSORS_GetHumLvl();
+  LastHumValue=HAL_SENSORS_GetDH22Lvl(GetHumdity);
   //Hum_Buffer_Push(LastHumValue);
   LastCo2Value = HAL_SENSORS_GetCo2Lvl();
   //Co2_Buffer_Push(LastCo2Value);

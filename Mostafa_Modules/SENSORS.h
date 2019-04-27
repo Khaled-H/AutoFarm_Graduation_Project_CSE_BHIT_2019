@@ -12,6 +12,7 @@
 /************ TYPES SIZES NEED TO BE REVIEWED BY HARDWARE MAN >> Khaled      ***************/
 
 typedef u8 HAL_SENSORS_tTempLvl;
+typedef u8 HAL_SENSORS_tHumLvl;
 typedef u8 HAL_SENSORS_tAmoniaLvl;
 typedef u8 HAL_SENSORS_tCo2Lvl;
 /************** TYPES OF OUTPUT BY DH22 SENSOR*************************/
