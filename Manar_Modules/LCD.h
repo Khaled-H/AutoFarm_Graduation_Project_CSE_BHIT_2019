@@ -20,6 +20,15 @@
 #include "STD_TYPES.h"
 #include "DIO.h"
 #include "PORT.h"
+
+// LCD 4 bit mode macros
+
+#define LCD_4BITMODE_DATA_OUT(OUTPUT_DATA)      (DIO_PORTB.DIO_ODR & ~(0x0F <<  12)) | (OUTPUT_DATA << 12);
+
+
+
+
+
 #define HAL_LCD_FIRSTROW (1)
 #define HAL_LCD_SECONDROW (2)
 #define HAL_LCD_COLUMN1 (1)

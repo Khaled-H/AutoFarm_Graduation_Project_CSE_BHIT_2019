@@ -14,8 +14,8 @@
 
 // DHT Pin Configuration
 
-#define HAL_DHT_PINOUT  (DIO_PORTA.DIO_CRL  |= 1 << 17)
-#define HAL_DHT_PININ   (DIO_PORTA.DIO_CRL  |= 8 << 16)
+#define HAL_DHT_PINOUT  DIO_PORTA.DIO_CRL |= 1 << 17;
+#define HAL_DHT_PININ   DIO_PORTA.DIO_CRL |= 8 << 16;
 
 
 void HAL_DHT22_Start (void);
