@@ -5,10 +5,14 @@
  *      Author: Khaled
  */
 
+
 #ifndef PORT_H_
 #define PORT_H_
 
 #include "STD_TYPES.h"
+
+
+
 
 
 /*************************************************************
@@ -16,8 +20,7 @@
  *************************************************************/
 
 /***   PORT NUMBER  ***/
-#define  HAL_SENSORS_TEMP_PORT                 (1)
-#define  HAL_SENSORS_HUMMIDY_PORT              (1)
+#define  HAL_SENSORS_DHT_PORT                  (1)
 #define  HAL_SENSORS_AMONNIA_PORT              (1)
 #define  HAL_SENSORS_COLEVEL_PORT              (1)
 /***   PIN NUMBER  ***/
@@ -38,8 +41,7 @@ typedef enum {
 
  enum MCAL_ADC_tChannelType {
 
-	HAL_SENSORS_TEMPCHANNEL    = MCAL_ADC_CHANNEL04,
-	HAL_SENSORS_HUMCHANNEL     = MCAL_ADC_CHANNEL05,
+	 HAL_SENSORS_DHT_CHANNEL   = MCAL_ADC_CHANNEL05,
 	HAL_SENSORS_AMONIACHANNEL  = MCAL_ADC_CHANNEL06,
 	HAL_SENSORS_COCHANNEL      = MCAL_ADC_CHANNEL07,
 };
@@ -119,6 +121,7 @@ typedef enum {
 
 /***  PORT/PIN CONFIGURATION   ***/
 extern void MCAL_PORT_Init();
+extern void MCAL_Port_PinDirection();
 
 
 

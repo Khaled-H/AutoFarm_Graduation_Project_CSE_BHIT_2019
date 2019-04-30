@@ -19,12 +19,3 @@ typedef u8 HAL_SENSORS_tCo2Lvl;
 #define GetTempreture (1)
 #define GetHumdity    (2)
 /************ TYPES SIZES NEED TO BE REVIEWED BY HARDWARE MAN >> Khaled      ***************/
-
-void HAL_SENSORS_Init(void);
-HAL_SENSORS_tAmoniaLvl HAL_SENSORS_GetAmoniaLvl(void);
-HAL_SENSORS_tTempLvl HAL_SENSORS_GetDH22Lvl(HAL_SENSORS_tTempLvl HAL_SENSOR_OutputType);
-HAL_SENSORS_tCo2Lvl HAL_SENSORS_GetCo2Lvl(void);
-
-
-
-#endif /* SENSORS_H_ */
