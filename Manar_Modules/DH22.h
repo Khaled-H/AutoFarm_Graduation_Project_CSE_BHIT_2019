@@ -17,8 +17,12 @@
 #define HAL_DHT_PINOUT  (DIO_PORTA.DIO_CRL  |= 1 << 17)
 #define HAL_DHT_PININ   (DIO_PORTA.DIO_CRL  |= 8 << 16)
 
+typedef struct {
+	u16 Temp ;
+	u16 Hum ;
+}HAL_SENSORS_tDH22ReturnType;
 
-void HAL_DHT22_Start (void);
-void HAL_DHT22_CheckResponse (void);
-u8 HAL_DHT22_ReadData(void);
+
+extern HAL_SENSORS_tDH22ReturnType HAL_DHT22_Read(void);
+static u8 ReadByte(void);
 #endif /* DH22_H_ */
