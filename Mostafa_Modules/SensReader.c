@@ -7,8 +7,7 @@
 #include "SENSORSREADER.h"
 
 
-static HAL_SENSORS_tTempLvl       LastTempValue;
-static HAL_SENSORS_tHumLvl        LastHumValue;
+static HAL_SENSORS_tDH22ReturnType      LastDH22Value;
 static HAL_SENSORS_tAmoniaLvl     LastAmoniaValue;
 static HAL_SENSORS_tCo2Lvl        LastCo2Value;
 
@@ -17,11 +16,11 @@ extern void APP_SENSORREADER_Init(){
 }
 
 extern HAL_SENSORS_tTempLvl APP_SENSORREADER_GetTempLvl(){
-return (LastTempValue);
+return ((HAL_SENSORS_tTempLvl)LastDH22Value.Temp);
 }
 
 extern HAL_SENSORS_tHumLvl APP_SENSORREADER_GetHumLvl(){
-  return (LastHumValue);
+  return ((HAL_SENSORS_tHumLvl)LastDH22Value.Hum);
 
 }
 
@@ -38,10 +37,8 @@ extern HAL_SENSORS_tCo2Lvl APP_SENSORREADER_GetCo2Lvl(){
 extern void APP_SENSORREADER_TaskLvlsUpdate(){
   LastAmoniaValue=HAL_SENSORS_GetAmoniaLvl();
   //Amonia_Buffer_Push(LastAmoniaValue);
-  LastTempValue =HAL_SENSORS_GetDH22Lvl(GetTempreture);
+  LastDH22Value =HAL_SENSORS_GetDH22Lvl();
   //Temp_Buffer_Push(LastTempValue);
-  LastHumValue=HAL_SENSORS_GetDH22Lvl(GetHumdity);
-
   //Hum_Buffer_Push(LastHumValue);
   LastCo2Value = HAL_SENSORS_GetCo2Lvl();
   //Co2_Buffer_Push(LastCo2Value);

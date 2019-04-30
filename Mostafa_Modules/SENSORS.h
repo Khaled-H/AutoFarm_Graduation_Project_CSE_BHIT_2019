@@ -14,6 +14,9 @@
 typedef u8 HAL_SENSORS_tAmoniaLvl;
 typedef u8 HAL_SENSORS_tCo2Lvl;
 
+typedef u8 HAL_SENSORS_tTempLvl;
+typedef u8 HAL_SENSORS_tHumLvl;
+
 extern void HAL_SENSORS_Init(void);
 extern HAL_SENSORS_tAmoniaLvl HAL_SENSORS_GetAmoniaLvl(void);
 extern HAL_SENSORS_tDH22ReturnType HAL_SENSORS_GetDH22Lvls(void);

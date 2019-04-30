@@ -23,7 +23,7 @@
 
 // LCD 4 bit mode macros
 
-#define LCD_4BITMODE_DATA_OUT(OUTPUT_DATA)      (DIO_PORTB.DIO_ODR & ~(0x0F <<  12)) | (OUTPUT_DATA << 12);
+#define LCD_4BITMODE_DATA_OUT(OUTPUT_DATA)      (DIO_PORTB.DIO_ODR= (DIO_PORTB.DIO_ODR & ~(0x000F <<  12)) | (OUTPUT_DATA << 12))
 
 
 
