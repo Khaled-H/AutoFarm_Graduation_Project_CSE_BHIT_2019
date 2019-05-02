@@ -106,8 +106,8 @@ extern void HAL_LCD_WriteNumber(u8 Value)
     Value = Value /100;
     HAL_LCD_WriteChar(Value+48);
     //Value = Value*10;
-    HAL_LCD_WriteChar((temp/10)+48);
-    HAL_LCD_WriteChar((temp%10)+48);
+    HAL_L//CD_WriteChar((temp/10)+48);
+    HAL_LCD_WriteChar((temp%10)+48);//
 }
 
 extern void HAL_LCD_SetCursor(u8 RowNumber,u8 ColomNumber){
