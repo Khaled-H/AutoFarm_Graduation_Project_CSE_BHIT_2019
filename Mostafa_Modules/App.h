@@ -9,9 +9,12 @@
 #define APP_H_
 
 #include "STD_TYPES.h"
+#include "RCC.h"
+#include "PORT.h"
+#include "DIO.h"
 #include "SENSORSREADER.h"
 #include "DISPALY.h"
-#include "WIFI.h"
+#include "IOT.h"
 #include "PROCESS.h"
 
 

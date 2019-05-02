@@ -8,10 +8,11 @@
 #ifndef IOT_H_
 #define IOT_H_
 #include "STD_TYPES.h"
-#include "SENSORS.h"
+#include "SENSORSREADER.h"
 #include "WIFI.h"
 
-/*Task, 15 Sec , Send Data to WIFI Module , Execution Time more than 4ms  */
-extern void APP_IOT_TaskSendPacket(void){
+extern void APP_IOT_Init();
 
+/*Task, 15 Sec , Send Data to WIFI Module , Execution Time more than 4ms  */
+extern void APP_IOT_SendPacket(void);
 #endif /* IOT_H_ */

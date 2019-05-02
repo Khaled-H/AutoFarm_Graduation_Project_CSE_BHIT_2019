@@ -6,6 +6,10 @@
  */
 #include "LEDS.h"
 
+#define HAL_LEDS_LEDON  (1)
+#define HAL_LEDS_LEDOFF (0)
+
+
 /******************     Normal Mode Led On Function     ***********************/
 extern void HAL_LEDS_NormalModeLed_ON(void){
 MCAL_DIO_WritePin(HAL_LEDS_NORMALMODELED_PORT, HAL_LEDS_NORMALMODELED_PIN,HAL_LEDS_LEDON);

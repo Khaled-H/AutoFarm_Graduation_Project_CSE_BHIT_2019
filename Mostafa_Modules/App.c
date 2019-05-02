@@ -7,7 +7,37 @@
 
 #include "App.h"
 
-extern void APP_TaskAppAlgorithm(void){
+
+typedef enum {
+  NORMAL,
+  CONFIG,
+  OTP
+}APP_tSystemModes;
+static APP_tSystemModes APP_SystemMode ;
+extern void APP_SystemInit(){
+  MCAL_RCC_SystemInit();
+  MCAL_PORT_Init();
+  APP_SENSORREADER_Init();
+  APP_PROCESS_Init();
+  APP_DISPLAY_INIT();
+  APP_IOT_Init();
+  /******       System Specific Tasks       **********/
+  HAL_LEDS_NormalModeLed_ON();
+  APP_SystemMode = NORMAL ;
+
+}
+
+/*1 Sec Period Task, To show System state Indicator*/
+extern void APP_SystemIdicatorTask(){
+if (APP_SystemMode == NORMAL ){
+HAL_LEDS_NormalModeLed_Toggle();
+}
+else {
+  /*Do nothing*/
+}
+}
+/*15 Sec Period Task Called by OS */
+extern void APP_SystemTask(){
   /*Read Sensor Values*/
   APP_SENSORREADER_TaskLvlsUpdate();
   /*Control Motors*/
@@ -15,8 +45,5 @@ extern void APP_TaskAppAlgorithm(void){
   /*update display */
   APP_DISPLAY_Task();
   /*Send Data to cloud*/
-  HAL_WIFI_SendByte(APP_SENSORREADER_GetTempLvl());
-  HAL_WIFI_SendByte(APP_SENSORREADER_GetHumLvl());
-  HAL_WIFI_SendByte(APP_SENSORREADER_GetAmoniaLvl());
-  HAL_WIFI_SendByte(APP_SENSORREADER_GetCo2Lvl());
+  APPL_IOT_SendPacket();
 }

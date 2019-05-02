@@ -34,10 +34,10 @@ extern HAL_SENSORS_tCo2Lvl APP_SENSORREADER_GetCo2Lvl(){
 }
 
 /*Task, 15 sec period, Update an existing buffer with last updates, Execution time Less than 500us */
-extern void APP_SENSORREADER_TaskLvlsUpdate(){
+extern void APP_SENSORREADER_LvlsUpdate(){
   LastAmoniaValue=HAL_SENSORS_GetAmoniaLvl();
   //Amonia_Buffer_Push(LastAmoniaValue);
-  LastDH22Value =HAL_SENSORS_GetDH22Lvl();
+  LastDH22Value =HAL_SENSORS_GetDH22Lvls();
   //Temp_Buffer_Push(LastTempValue);
   //Hum_Buffer_Push(LastHumValue);
   LastCo2Value = HAL_SENSORS_GetCo2Lvl();

@@ -17,5 +17,5 @@ extern HAL_SENSORS_tHumLvl APP_SENSORREADER_GetHumLvl();
 extern HAL_SENSORS_tAmoniaLvl APP_SENSORREADER_GetAmoniaLvl();
 extern HAL_SENSORS_tCo2Lvl APP_SENSORREADER_GetCo2Lvl();
 /*Task, 1 sec period, Update an existing buffer with last updates*/
-extern void APP_SENSORREADER_TaskLvlsUpdate();
+extern void APP_SENSORREADER_LvlsUpdate();
 #endif /* SNSRDR_H_ */

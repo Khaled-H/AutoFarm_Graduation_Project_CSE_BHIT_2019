@@ -12,15 +12,13 @@
 #include "DIO.h"
 
 
-#define HAL_LEDS_LEDON  (1)
-#define HAL_LEDS_LEDOFF (0)
 
-extern void HAL_LEDS_NormalLed_ON(void);
-extern void HAL_LEDS_OTALed_ON(void);
-extern void HAL_LEDS_NormalLed_OFF(void);
-extern void HAL_LEDS_OTALed_OFF(void);
-extern void HAL_LEDS_NormalLed_Toggle(void);
-extern void HAL_LEDS_OTALed_Toggle(void);
+extern void HAL_LEDS_NormalModeLed_ON(void);
+extern void HAL_LEDS_OTAModeLed_ON(void);
+extern void HAL_LEDS_NormalModeLed_OFF(void);
+extern void HAL_LEDS_OTAModeLed_OFF(void);
+extern void HAL_LEDS_NormalModeLed_Toggle(void);
+extern void HAL_LEDS_OTAModeLed_Toggle(void);
 
 
 
