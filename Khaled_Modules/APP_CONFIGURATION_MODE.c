@@ -7,94 +7,137 @@
 #include "STD_TYPES.h"
 #include "APP_CONFIGURATION_MODE.h"
 
+#define WellcomPageDisplayTime    (5)      // defined form the team leader ,want to be 5sec
 
-
-u8  OkSwitchState     = SWITCHES_RELEASED; // will be init function
+u8  OkSwitchState     = SWITCHES_RELEASED; // will be in the init function
 u8  ModeSwitchState   = SWITCHES_RELEASED;
 u8  PlusSwitchState   = SWITCHES_RELEASED;
 u8  MinusSwitchState  = SWITCHES_RELEASED;
 
 typedef enum  {
-	CONFIG_MODE_WELLCOMPAGE = 1,
+	CONFIG_MODE_WELCOMPAGE = 1,
 	CONFIG_MODE_DEFAULTSPAGE,
 	CONFIG_MODE_SETTINGPAGE,
 	CONFIG_MODE_ENDPAGE,
 }APP_CONFIG_tPageNum;
 
 
-void APP_CONFIG_MODE_SwitchsUpdates(HAL_SWITCHES_tTypes SwitchType){
+typedef enum  {
+	TEMPERATURE_LVL_SEETING = 1,
+	HUMMIDITY_LVL_SEETING,
+	AMMINIA_LVL_SEETING,
+	CO_LVL_SEETING,
+}APP_CONFIG_tSensorForSetting;
 
- // here we will get the four switches states
+APP_CONFIG_tPageNum APP_CONFIG_PageNum = 0 ;        //the page to display
+APP_CONFIG_tSensorForSetting SensorForSetting = 0;  //the sensor to set
+
+void APP_CONFIG_MODE_Init(){
+APP_CONFIG_tPageNum APP_CONFIG_PageNum = CONFIG_MODE_WELCOMPAGE ;        // the first page of configuration mode
+APP_CONFIG_tSensorForSetting SensorForSetting = TEMPERATURE_LVL_SEETING;  // the first sensor for setting reference point
+}
+
+void APP_CONFIG_MODE_TaskProcess(){
+
+static u32 firstpagetimeout = 0 ;                 // time duration for displaying welcome page
+
+APP_CONFIG_MODE_PageDisplay(APP_CONFIG_PageNum);  // display the current page
+
+
+/***************************   select the current page     ****************************/
+
+switch (APP_CONFIG_PageNum){
+/*** Case of the welcome  page ***/
+case CONFIG_MODE_WELCOMPAGE:
+	if (firstpagetimeout == WellcomPageDisplayTime ){
+		APP_CONFIG_PageNum = CONFIG_MODE_DEFAULTSPAGE;
+		break;
+	}
+	else {
+		firstpagetimeout ++;
+	}
+	break;
+
+/*** Case of the Defaults  page ***/
+case CONFIG_MODE_DEFAULTSPAGE :
+	OkSwitchState = APP_CONFIG_MODE_SwitchsUpdates(SWITCHES_OKSW);            //wait until OK switch be pressed
+	if (OkSwitchState == SWITCHES_PRESSED){
+		APP_CONFIG_PageNum = CONFIG_MODE_SETTINGPAGE;
+		break;
+	}
+	else {}
+	break;
+
+/*** Case of the setting  page ***/
+case CONFIG_MODE_SETTINGPAGE :
+		/**********   select sensor  for setting   *************/
+		switch (SensorForSetting){
+
+		/*** Case of temperature sensor ***/
+		case TEMPERATURE_LVL_SEETING:
+			OkSwitchState = APP_CONFIG_MODE_SwitchsUpdates (SWITCHES_OKSW);
+			if (OkSwitchState == SWITCHES_PRESSED ){
+				SensorForSetting = HUMMIDITY_LVL_SEETING;
+				break;
+			}
+			else {
+				APP_CONFIG_MODE_SensorRefSeeting(TEMPERATURE_LVL_SEETING);
+			}
+			break;
+
+		/*** Case of humidity sensor ***/
+		case HUMMIDITY_LVL_SEETING:
+			OkSwitchState = APP_CONFIG_MODE_SwitchsUpdates (SWITCHES_OKSW);
+			if (OkSwitchState == SWITCHES_PRESSED ){
+				SensorForSetting = AMMINIA_LVL_SEETING;
+				break;
+			}
+			else {
+				APP_CONFIG_MODE_SensorRefSeeting(HUMMIDITY_LVL_SEETING);
+			}
+			break;
+
+		/*** Case of ammonia sensor ***/
+		case AMMINIA_LVL_SEETING:
+			OkSwitchState = APP_CONFIG_MODE_SwitchsUpdates (SWITCHES_OKSW);
+			if (OkSwitchState == SWITCHES_PRESSED ){
+				SensorForSetting = CO_LVL_SEETING;
+				break;
+			}
+			else {
+				APP_CONFIG_MODE_SensorRefSeeting(AMMINIA_LVL_SEETING);
+			}
+			break;
+
+		/*** Case of CO sensor ***/
+		case CO_LVL_SEETING:
+			OkSwitchState = APP_CONFIG_MODE_SwitchsUpdates (SWITCHES_OKSW);
+			if (OkSwitchState == SWITCHES_PRESSED ){
+				APP_CONFIG_PageNum = CONFIG_MODE_ENDPAGE;
+				break;
+			}
+			else {
+				APP_CONFIG_MODE_SensorRefSeeting(CO_LVL_SEETING);
+			}
+			break;
+		}
+	}
+}
+
+
+
+void APP_CONFIG_MODE_SwitchsUpdates(HAL_SWITCHES_tTypes SwitchType){
 
 }
 
 void APP_CONFIG_MODE_PageDisplay(APP_CONFIG_tPageNum  PageNum){
 
-	switch (PageNum){
-	case CONFIG_MODE_WELLCOMPAGE :
+}
 
-
-
-
-	}
+void APP_CONFIG_MODE_SensorRefSeeting(){
 
 }
 
-void APP_CONFIG_MODE_SensorsRefLvlSetting(){
-
-}
-
-/*
- * get switches updates
- * update system important values
- * page display
- * set points
- *
- *
- */
-APP_CONFIG_tPageNum APP_CONFIG_PageNum = CONFIG_MODE_WELLCOMPAGE ;    //will be in the init function
-
-void APP_CONFIG_MODE_TaskLvlsUpdate(){
-
-	u32 WellcomPageDisplayTime = 0 ;                                 //will be in the init function
-
-	switch (APP_CONFIG_PageNum){
-	case CONFIG_MODE_WELLCOMPAGE:
-		// welcome page operation
-		APP_CONFIG_MODE_PageDisplay(CONFIG_MODE_WELLCOMPAGE);
-		WellcomPageDisplayTime ++;
-		// switch to the next page check;
-		if (WellcomPageDisplayTime == WellcomPageDisplayTime ){
-			APP_CONFIG_PageNum = CONFIG_MODE_DEFAULTSPAGE;
-		}
-		else {};
-		break;
-
-	case CONFIG_MODE_DEFAULTSPAGE :
-		APP_CONFIG_MODE_PageDisplay(CONFIG_MODE_WELLCOMPAGE);
-		APP_CONFIG_MODE_SwitchsUpdates (SWITCHES_OKSW);
-		if (OkSwitchState == SWITCHES_PRESSED){
-			APP_CONFIG_PageNum = CONFIG_MODE_ENDPAGE;
-
-		}
-		else {}
-		break;
-	case CONFIG_MODE_SETTINGPAGE :
-
-		APP_CONFIG_MODE_PageDisplay(CONFIG_MODE_SETTINGPAGE);
-		APP_CONFIG_MODE_SwitchsUpdates (SWITCHES_OKSW);
-		if (OkSwitchState == SWITCHES_PRESSED){
-			APP_CONFIG_PageNum = CONFIG_MODE_SETTINGPAGE ;
-
-		}
-		else {}
-		break;
-
-
-
-
-	}
-}
 
 
 

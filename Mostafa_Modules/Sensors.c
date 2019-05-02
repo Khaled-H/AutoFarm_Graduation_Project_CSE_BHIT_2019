@@ -17,7 +17,7 @@ extern HAL_SENSORS_tAmoniaLvl HAL_SENSORS_GetAmoniaLvl(void){
 	HAL_SENSORS_tAmoniaLvl SesonrOutputVoltage ;            // sensor output voltage in volts
 	HAL_SENSORS_tAmoniaLvl RS = 0;                          // MQ135 sensor surface resistance in gas high concentration
     HAL_SENSORS_tAmoniaLvl RO = 0;                          // MQ135 sensor surface resistance in pure air
-	HAL_SENSORS_tAmoniaLvl SurfaceResistanceRatio = 0;      //surface resistance ratio (RS/RO)
+	HAL_SENSORS_tAmoniaLvl SurfaceResistanceRatio = 0;      // surface resistance ratio (RS/RO)
 	HAL_SENSORS_tAmoniaLvl AmmoniaLvl;
 
 	// get the sensor output voltage
@@ -25,9 +25,9 @@ extern HAL_SENSORS_tAmoniaLvl HAL_SENSORS_GetAmoniaLvl(void){
 
 	// AMMONIA Level Calculation
 	RS = ((ADC_REFERANCE_VOLTAGE - SesonrOutputVoltage )/ADC_REFERANCE_VOLTAGE);
-	RO = RS / 3.6;                                                   //3.6 is the  (RS/SO) ratio at 100 PPM of NH3 gas
+	RO = RS / MQ135_MAX_RES_RATIO;
     SurfaceResistanceRatio = RS / RO;
-    AmmoniaLvl = SurfaceResistanceRatio * MAXIMUM_AMMONIIA_LVL;      // AMMONIA gas level in PPM
+    AmmoniaLvl = ((SurfaceResistanceRatio * MINMUM_AMMONIIA_LVL) / MQ135_MAX_RES_RATIO);      // AMMONIA gas level in PPM
 	return AmmoniaLvl ;
 }
 extern HAL_SENSORS_tDH22ReturnType HAL_SENSORS_GetDH22Lvls(void){
@@ -39,7 +39,7 @@ extern HAL_SENSORS_tCo2Lvl HAL_SENSORS_GetCo2Lvl(void){
 	HAL_SENSORS_tCo2Lvl SesonrOutputVoltage ;            // sensor output voltage in volts
 	HAL_SENSORS_tCo2Lvl RS = 0;                          // MQ9 sensor surface resistance in gas high concentration
 	HAL_SENSORS_tCo2Lvl RO = 0;                          // MQ9 sensor surface resistance in pure air
-	HAL_SENSORS_tCo2Lvl SurfaceResistanceRatio = 0;      //surface resistance ratio (RS/RO)
+	HAL_SENSORS_tCo2Lvl SurfaceResistanceRatio = 0;      // surface resistance ratio (RS/RO)
 	HAL_SENSORS_tCo2Lvl CoLvl;
 
 	// get the sensor output voltage
@@ -47,9 +47,9 @@ extern HAL_SENSORS_tCo2Lvl HAL_SENSORS_GetCo2Lvl(void){
 
 	// CO Level Calculation
 	RS = ((ADC_REFERANCE_VOLTAGE - SesonrOutputVoltage )/ADC_REFERANCE_VOLTAGE);
-	RO = RS / 9.9;                                          //9.9 is the  (RS/SO) ratio at 1000 PPM of LPG gas
+	RO = RS / MQ9_MAX_RES_RATIO;
     SurfaceResistanceRatio = RS / RO;
-    CoLvl = SurfaceResistanceRatio * MAXIMUM_CO_LVL;        // CO gas level in PPM
+    CoLvl = ((SurfaceResistanceRatio * MINMUM_CO_LVL) / MQ9_MAX_RES_RATIO);        // CO gas level in PPM
 	return CoLvl ;
 }
 
