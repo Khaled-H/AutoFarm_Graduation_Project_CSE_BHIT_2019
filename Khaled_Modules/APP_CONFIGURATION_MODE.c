@@ -39,10 +39,9 @@ APP_CONFIG_tSensorForSetting SensorForSetting = TEMPERATURE_LVL_SEETING;  // the
 
 void APP_CONFIG_MODE_TaskProcess(){
 
-static u32 firstpagetimeout = 0 ;                 // time duration for displaying welcome page
+static u32 firstpagetimeout = 0 ;                   // time duration for displaying welcome page
 
-APP_CONFIG_MODE_PageDisplay(APP_CONFIG_PageNum);  // display the current page
-
+APP_CONFIG_MODE_PageDisplay(APP_CONFIG_PageNum);    // display the current page
 
 /***************************   select the current page     ****************************/
 

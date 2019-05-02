@@ -8,8 +8,8 @@
 
 
 static HAL_SENSORS_tDH22ReturnType      LastDH22Value;
-static HAL_SENSORS_tAmoniaLvl     LastAmoniaValue;
-static HAL_SENSORS_tCo2Lvl        LastCo2Value;
+static HAL_SENSORS_tAmoniaLvl           LastAmoniaValue;
+static HAL_SENSORS_tCo2Lvl              LastCo2Value;
 
 extern void APP_SENSORREADER_Init(){
   HAL_SENSORS_Init();
