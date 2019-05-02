@@ -48,10 +48,14 @@ MCAL_ADC_tInputData MCAL_ADC_ReadChannel(MCAL_ADC_tChannelType ChannelNum){
 	}
 
 	/*wait until the end of conversion(EOC) flag set */
+
 	while((MCAL_ADC1.SR & 2) != 2);
 	AdcInputData = MCAL_ADC1.DR;                 //get the input analog data
 	MCAL_ADC1.CR2 |= (0 << 0);                   //Force ADC to the power down mode
 	MCAL_ADC1.DR = 0;                            //clear the input analog data register
+
+	 // convert the sensor reading to voltage in volts
+	AdcInputData = ((AdcInputData / ADC_HIGHEST_LEVEL) * ADC_REFERANCE_VOLTAGE) ;
 	return (AdcInputData);
 }
 

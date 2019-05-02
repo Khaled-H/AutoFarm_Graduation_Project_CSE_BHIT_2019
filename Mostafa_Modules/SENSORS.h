@@ -11,6 +11,9 @@
 #include "ADC.h"
 #include "DH22.h"
 /************ TYPES SIZES NEED TO BE REVIEWED BY HARDWARE MAN >> Khaled      ***************/
+#define MAXIMUM_CO_LVL             2000
+#define MAXIMUM_AMMONIIA_LVL       10000
+
 typedef u8 HAL_SENSORS_tAmoniaLvl;
 typedef u8 HAL_SENSORS_tCo2Lvl;
 

@@ -12,7 +12,12 @@
 #include "PORT.h"
 
 /*********** MCAL_ADC data_types *************/
-typedef u32 MCAL_ADC_tInputData;
+
+#define  ADC_HIGHEST_LEVEL       (4096)          // Highest quantization level
+#define  ADC_REFERANCE_VOLTAGE      (5)          // Reference  voltage is 5 volts;
+                                                 //hint :have to be adjusted it form the Datasheet.
+
+typedef f32 MCAL_ADC_tInputData;
 typedef struct
 {
 	u32 SR;
