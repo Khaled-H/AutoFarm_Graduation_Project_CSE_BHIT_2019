@@ -7,31 +7,31 @@
 #include "STD_TYPES.h"
 #include "APP_CONFIGURATION_MODE.h"
 
-
-
-u8  OkSwitchState     = SWITCHES_RELEASED; // will be init function
-u8  ModeSwitchState   = SWITCHES_RELEASED;
-u8  PlusSwitchState   = SWITCHES_RELEASED;
-u8  MinusSwitchState  = SWITCHES_RELEASED;
+u8  OkSwitchState     = 0;
+u8  ModeSwitchState   = 0;
+u8  PlusSwitchState   = 0;
+u8  MinusSwitchState  = 0;
 
 typedef enum  {
-	CONFIG_MODE_WELLCOMPAGE = 1,
-	CONFIG_MODE_DEFAULTSPAGE,
-	CONFIG_MODE_SETTINGPAGE,
-	CONFIG_MODE_ENDPAGE,
-}APP_CONFIG_tPageNum;
+	FIRST_PAGE = 1,
+	SECOND_PAGE,
+	THIRD_PAGE,
+	FOURTH_PAGE,
+	FIFTH_PAGE,
+	SIXTH_PAGE,
+	SEVENTH_PAGE,
+}APP_CONFIGURATIONMODE_tPageNum;
 
 
-void APP_CONFIG_MODE_SwitchsUpdates(HAL_SWITCHES_tTypes SwitchType){
+void APP_CONFIG_MODE_SwitchsUpdates(){
 
  // here we will get the four switches states
 
 }
 
-void APP_CONFIG_MODE_PageDisplay(APP_CONFIG_tPageNum  PageNum){
+void APP_CONFIG_MODE_PageDisplay(){
 
-	switch (PageNum){
-	case CONFIG_MODE_WELLCOMPAGE :
+	switch (FIRST_PAGE){
 
 
 
@@ -52,51 +52,3 @@ void APP_CONFIG_MODE_SensorsRefLvlSetting(){
  *
  *
  */
-APP_CONFIG_tPageNum APP_CONFIG_PageNum = CONFIG_MODE_WELLCOMPAGE ;    //will be in the init function
-
-void APP_CONFIG_MODE_TaskLvlsUpdate(){
-
-	u32 WellcomPageDisplayTime = 0 ;                                 //will be in the init function
-
-	switch (APP_CONFIG_PageNum){
-	case CONFIG_MODE_WELLCOMPAGE:
-		// welcome page operation
-		APP_CONFIG_MODE_PageDisplay(CONFIG_MODE_WELLCOMPAGE);
-		WellcomPageDisplayTime ++;
-		// switch to the next page check;
-		if (WellcomPageDisplayTime == WellcomPageDisplayTime ){
-			APP_CONFIG_PageNum = CONFIG_MODE_DEFAULTSPAGE;
-		}
-		else {};
-		break;
-
-	case CONFIG_MODE_DEFAULTSPAGE :
-		APP_CONFIG_MODE_PageDisplay(CONFIG_MODE_WELLCOMPAGE);
-		APP_CONFIG_MODE_SwitchsUpdates (SWITCHES_OKSW);
-		if (OkSwitchState == SWITCHES_PRESSED){
-			APP_CONFIG_PageNum = CONFIG_MODE_ENDPAGE;
-
-		}
-		else {}
-		break;
-	case CONFIG_MODE_SETTINGPAGE :
-
-		APP_CONFIG_MODE_PageDisplay(CONFIG_MODE_SETTINGPAGE);
-		APP_CONFIG_MODE_SwitchsUpdates (SWITCHES_OKSW);
-		if (OkSwitchState == SWITCHES_PRESSED){
-			APP_CONFIG_PageNum = CONFIG_MODE_SETTINGPAGE ;
-
-		}
-		else {}
-		break;
-
-
-
-
-	}
-}
-
-
-
-
-
