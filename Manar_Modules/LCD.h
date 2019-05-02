@@ -22,12 +22,7 @@
 #include "PORT.h"
 
 // LCD 4 bit mode macros
-
 #define LCD_4BITMODE_DATA_OUT(OUTPUT_DATA)      (DIO_PORTB.DIO_ODR= (DIO_PORTB.DIO_ODR & ~(0x000F <<  12)) | (OUTPUT_DATA << 12))
-
-
-
-
 
 #define HAL_LCD_FIRSTROW (1)
 #define HAL_LCD_SECONDROW (2)
@@ -47,6 +42,7 @@
 #define HAL_LCD_COLUMN14 (14)
 #define HAL_LCD_COLUMN15 (15)
 #define HAL_LCD_COLUMN16 (16)
+
 #define HAL_LCD_CLEAR HAL_LCD_WriteCommand(0x01)  // Macro for Clear in the LCD
 
 extern void HAL_LCD_Init();
@@ -54,7 +50,6 @@ extern void HAL_LCD_WriteChar(u8 Value);
 extern void HAL_LCD_WriteCommand(u8 Value);
 extern void HAL_LCD_WriteString(u8 *arry);
 extern void HAL_LCD_WriteNumber(u8 Value);
-void _delay_ms(u8 DelayTime);
 extern void HAL_LCD_SetCursor(u8 RowNumber,u8 ColomNumber);
 
 #endif /* LCD_H_ */
