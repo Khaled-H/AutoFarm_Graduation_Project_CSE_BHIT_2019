@@ -17,7 +17,7 @@
 
 //**fan will connect to pin PB6.. ..PB7 **//
 void HAL_ACTUATOR_Init(void);
-void HAL_ACTUATOR_On(u8 FanNumber);
-void HAL_ACTUATOR_Off(u8 FanNumber);
+extern void HAL_ACTUATOR_On(u8 HAL_ACTUATORS_ActuatorName);
+extern void HAL_ACTUATOR_Off(u8 HAL_ACTUATORS_ActuatorName);
 
 #endif /* ACTUATORS_H_ */

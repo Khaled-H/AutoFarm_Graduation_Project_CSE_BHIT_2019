@@ -10,9 +10,8 @@ void HAL_ACTUATOR_Init(void){
 	//pits output in openDrain mode and max speed 10MHZ init PB7&PB6 as output //
 	MCAL_PORT_Init();
 	//not access output data reg//
-
 }
-void HAL_ACTUATOR_On(u8 HAL_ACTUATORS_ActuatorName){
+extern void HAL_ACTUATOR_On(u8 HAL_ACTUATORS_ActuatorName){
 	switch ( HAL_ACTUATORS_ActuatorName ){
 	case UPPERFAN:
 		MCAL_DIO_WritePin (HAL_ACTUATORS_UPPERFAN_PORT  , HAL_ACTUATORS_UPPERFAN_PIN,STD_HIGH  );
@@ -27,7 +26,7 @@ void HAL_ACTUATOR_On(u8 HAL_ACTUATORS_ActuatorName){
 	}
 
 }
-void HAL_ACTUATOR_Off(u8 HAL_ACTUATORS_ActuatorName	){
+extern void HAL_ACTUATOR_Off(u8 HAL_ACTUATORS_ActuatorName){
 	switch ( HAL_ACTUATORS_ActuatorName ){
 	case UPPERFAN:
 		MCAL_DIO_WritePin (HAL_ACTUATORS_UPPERFAN_PORT  , HAL_ACTUATORS_UPPERFAN_PIN,STD_LOW   );
