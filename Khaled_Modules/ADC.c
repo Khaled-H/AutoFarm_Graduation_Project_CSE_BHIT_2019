@@ -54,8 +54,8 @@ MCAL_ADC_tInputData MCAL_ADC_ReadChannel(MCAL_ADC_tChannelType ChannelNum){
 	MCAL_ADC1.CR2 |= (0 << 0);                   //Force ADC to the power down mode
 	MCAL_ADC1.DR = 0;                            //clear the input analog data register
 
-	 // convert the sensor reading to voltage in volts
-	AdcInputData = ((AdcInputData / ADC_HIGHEST_LEVEL) * ADC_REFERANCE_VOLTAGE) ;
+	 // convert the sensor reading to voltage in mile volts
+	AdcInputData = (((AdcInputData / ADC_HIGHEST_LEVEL) * ADC_REFERANCE_VOLTAGE)*1000) ;
 	return (AdcInputData);
 }
 
