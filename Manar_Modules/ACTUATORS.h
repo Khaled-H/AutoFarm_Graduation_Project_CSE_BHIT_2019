@@ -10,6 +10,10 @@
 #include "STD_TYPES.h"
 #include "PORT.h"
 #include "DIO.h"
+//**HAL ACTUATOR NAME**//
+#define UPPERFAN (1)
+#define LOWERFAN (2)
+#define HEATER (3)
 
 //**fan will connect to pin PB6.. ..PB7 **//
 void HAL_ACTUATOR_Init(void);
