@@ -6,8 +6,6 @@
  */
 
 #include "ADC.h"
-#include "PORT.h"
-
 void MCAL_ADC_Init(){
 
 	MCAL_ADC1.CR2 |= (0 << 1);                      //Enable single mode conversion

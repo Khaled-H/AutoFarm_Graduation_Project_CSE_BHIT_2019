@@ -6,13 +6,8 @@
  */
 
 
-/*
- * LCD.c
- *
- *  Created on: Nov 3, 2017
- *      Author: Mostafa
- */
 #include "LCD.h"
+#include "PORT.h"
 
 //**** Register Select (RS) Pin Conditions *****
 #define DATA (1)
@@ -22,21 +17,25 @@
 #define WRITE (0)
 #define READ (1)
 
-static void _delay_us(u8 DelayTime){
-	for (int i=0;i<=DelayTime;i++){
-	   for (int j=0;j<=4;j++);
+static void _delay_ms(u8 DelayTime){
+	for (int i=0;i<DelayTime;i++){
+		for (int j=0; j <= 4000; j++);
 	}
 }
 
 extern void HAL_LCD_Init(void)
 {
-_delay_us(3000);
-HAL_LCD_WriteCommand(0x33);         // LCD initialization as 4bit mode
-HAL_LCD_WriteCommand(0x32);         // LCD initialization as 4bit mode
+_delay_ms(40);
+HAL_LCD_WriteCommand(0x33);
+_delay_ms(5);
+HAL_LCD_WriteCommand(0x32);
+_delay_ms(5);
 HAL_LCD_WriteCommand(0x28);         // LCD initialization as 4bit mode
+_delay_ms(2);
 HAL_LCD_WriteCommand(0x0E);
+_delay_ms(2);
 HAL_LCD_WriteCommand(0x01);
-_delay_us(2000);
+_delay_ms(2);
 HAL_LCD_WriteCommand(0x06); /*entry mode set*/
 
 }
@@ -46,20 +45,20 @@ extern void HAL_LCD_WriteChar(u8 Value)
 
 /**************   send the higher 4 bits ***/
 
-LCD_4BITMODE_DATA_OUT(Value>>4);
+LCD_4BITMODE_DATA_OUT((u32)((Value >> 4) & 0x0F));
 MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_RS_PIN,DATA);
 MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,STD_HIGH);
-_delay_us(1);
+_delay_ms(1);
 MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,STD_LOW);
 
 /**************   send the lower 4 bits ***/
 
-LCD_4BITMODE_DATA_OUT( 0x0F & Value);
+LCD_4BITMODE_DATA_OUT((u32)(Value & 0x0F));
 MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_RS_PIN,DATA);
 MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITHIGH);
-_delay_us(1);
+_delay_ms(1);
 MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITLOW);
-_delay_us(100);
+
 }
 //************************************************
 static void HAL_LCD_WriteCommand(u8 Value)
@@ -67,44 +66,45 @@ static void HAL_LCD_WriteCommand(u8 Value)
 
     /**************   send the higher 4 bits LCD command  ***/
 
-    LCD_4BITMODE_DATA_OUT(Value>>4);
+    LCD_4BITMODE_DATA_OUT((u32)((Value >> 4) & 0x0F));
     MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_RS_PIN,COMMAND);
     MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITHIGH);
-    _delay_us(1);
+    _delay_ms(1);
     MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITLOW);
-    _delay_us(100);
+
     /**************   send the lower 4 bits LCD command  ***/
 
-    LCD_4BITMODE_DATA_OUT( 0x0F & Value);
+    LCD_4BITMODE_DATA_OUT((u32)(Value & 0x0F));
     MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_RS_PIN,COMMAND);
     MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITHIGH);
-    _delay_us(1);
+    _delay_ms(1);
     MCAL_DIO_WritePin(HAL_LCD_CONTROL_PORT,HAL_LCD_EN_PIN,BITLOW);
-    _delay_us(100);
+
 }
 //**************************************************
 /* Function for Writing A String of ASCIIs Chars on the LCD */
 extern void HAL_LCD_WriteString(u8 *arry)
 {
-    u8 i =0 ;
+    u8 i = 0 ;
     while((arry[i])!= '\0') // loop the String until find the Null Value
     {
     	HAL_LCD_WriteChar(arry[i]);
         i++;
+       for (int j=0; j <= 4000; j++);
     }
 }
 
-extern void HAL_LCD_WriteNumber(u8 Value)
+extern void HAL_LCD_WriteNumber(u32 Value)
 {
     //      Function for Writing an Integer on the LCD, Converting from Integer
     //      Value to it's ASCII Value
 
-    u8 temp = Value%100 ;
+   u32 temp = Value%100 ;
     Value = Value /100;
     HAL_LCD_WriteChar(Value+48);
     //Value = Value*10;
     HAL_LCD_WriteChar((temp/10)+48);
-    HAL_LCD_WriteChar((temp%10)+48);//
+    HAL_LCD_WriteChar((temp%10)+48);
 }
 
 extern void HAL_LCD_SetCursor(u8 RowNumber,u8 ColomNumber){
@@ -213,5 +213,5 @@ extern void HAL_LCD_SetCursor(u8 RowNumber,u8 ColomNumber){
 				break;
 			}
 		}
-
+     	for (int j=0; j <= 4000; j++);
 	}
