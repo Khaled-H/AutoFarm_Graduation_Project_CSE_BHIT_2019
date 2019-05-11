@@ -39,20 +39,20 @@ extern HAL_SENSORS_tDH22ReturnType HAL_DHT22_Read(void){
 }
 
 static u8 ReadByte(void){
-	u8 i ,temp =0;
+	u8 i ,value =0;
 	for (i=0;i<8;i++){
 		while(!(MCAL_DIO_ReadPin(HAL_SENSORS_DHT_PORT,HAL_SENSORS_DHT_CHANNEL)));
-		Delay_us(50);
+		Delay_us(40);
 		if ((MCAL_DIO_ReadPin(HAL_SENSORS_DHT_PORT,HAL_SENSORS_DHT_CHANNEL)) == STD_LOW)   // if the pin is low
 			{
-				temp= temp & ~(1<<(8-i));   // write 0
+				value= value & ~(1<<(8-i));   // write 0
 			}
 			else{
-				temp = temp | (1<<(8-i));  // if the pin is high, write 1
+				value = value | (1<<(8-i));  // if the pin is high, write 1
 				}
 			while ((MCAL_DIO_ReadPin(HAL_SENSORS_DHT_PORT,HAL_SENSORS_DHT_CHANNEL)==STD_HIGH));  // wait for the pin to go low
 		}
-		return temp;
+		return value;
 	}
 
 static void Delay_us(u8 DelayPeriod){

@@ -23,52 +23,14 @@ typedef struct {
 void MCAL_RCC_SystemInit(void)
 {
 
-	/** used HSE 8MHZ without PLL*/
+	/** used HSE 8MHZ without PLL**/
 	/*HSE ON and select byBath*/
 	/*MCO: Micro_controller clock output HSE clock selected*/
 	/*SWS system clock switch*/
 	/*SW system clock switch**/
 	RCC.CR.REG_FULL_32=(u32)0x00050000;
-	RCC.CFGR.REG_FULL_32=(u32)0x06000005;
+	RCC.CFGR.REG_FULL_32=(u32)0x06000001; /*sw bit only in CFGR  not */
 	RCC.APB2ENR.REG_FULL_32=(u32)0x0000C61D;
 }
-/*extern  void MCAL_RCC_PrepheralEnable(RCC_TPrepheral_Number PrepheralName)
-{
-	switch(PrepheralName)
-	{
-	case MCAL_RCC_PORTA :
-		MCAL_RCC_Init();
-		RCC.APB2ENR.REG_FULL_32=(u32)0x00000004;
-		break;
-	case MCAL_RCC_PORTB :
-		MCAL_RCC_Init();
-		RCC.APB2ENR.REG_FULL_32=(u32)0x00000008;
-		break;
-	case MCAL_RCC_PORTC:
-		MCAL_RCC_Init();
-		RCC.APB2ENR.REG_FULL_32=(u32)0x00000010;
-		break;
-	case MCSL_RCC_USART1:
-		MCAL_RCC_Init();
-		RCC.APB2ENR.REG_FULL_32=(u32)0x00004000;
-		RCC.APB2ENR.REG_FULL_32=(u32)0x00000001; //AFIO
-		break;
-	case MCAL_RCC_ADC1:
-		MCAL_RCC_Init();
-		RCC.APB2ENR.REG_FULL_32=(u32)0x00000200;
-		RCC.APB2ENR.REG_FULL_32=(u32)0x00000001; //AFIO
-        break;
-	case MCAL_RCC_ADC2:
-			MCAL_RCC_Init();
-			RCC.APB2ENR.REG_FULL_32=(u32)0x00000400;
-			RCC.APB2ENR.REG_FULL_32=(u32)0x00000001; //AFIO
-	        break;
-	case MCAL_RCC_ADC3:
-			MCAL_RCC_Init();
-			RCC.APB2ENR.REG_FULL_32=(u32)0x00008000;
-			RCC.APB2ENR.REG_FULL_32=(u32)0x00000001; //AFIO
-	        break;
-	}
-}*/
 
 

@@ -17,7 +17,7 @@ typedef struct {
 	HWREG32 GTPR;
 }USART1_typedef;
 
-#define USART1 (*((volatile USART1_typedef * const )(0x40013800)))
+#define USART1 (*((volatile USART1_typedef * const (0x40013800))))
 
 
 void MCAL_UART1_Init(void){
