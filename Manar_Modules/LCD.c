@@ -213,5 +213,5 @@ extern void HAL_LCD_SetCursor(u8 RowNumber,u8 ColomNumber){
 				break;
 			}
 		}
-     	for (int j=0; j <= 4000; j++);
+     	/*for (int j=0; j <= 4000; j++);*/
 	}
