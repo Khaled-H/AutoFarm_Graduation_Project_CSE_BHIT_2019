@@ -24,13 +24,9 @@ void MCAL_RCC_SystemInit(void)
 {
 
 	/** used HSE 8MHZ without PLL**/
-	/*HSE ON and select byBath*/
-	/*MCO: Micro_controller clock output HSE clock selected*/
-	/*SWS system clock switch*/
-	/*SW system clock switch**/
-	RCC.CR.REG_FULL_32=(u32)0x00050000;
-	RCC.CFGR.REG_FULL_32=(u32)0x06000001; /*sw bit only in CFGR  not */
-	RCC.APB2ENR.REG_FULL_32=(u32)0x0000C61D;
+	RCC.CR.REG_FULL_32=(u32)0x00010000; /**HSE ON **/
+	RCC.CFGR.REG_FULL_32=(u32)0x00000001; /*sw bit only in CFGR  not */
+	RCC.APB2ENR.REG_FULL_32=(u32)0x0000421D;
 }
 
 
